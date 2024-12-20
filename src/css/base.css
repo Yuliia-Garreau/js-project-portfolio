@@ -1,13 +1,13 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css');
+
 :root {
   /* font-family: Inter, Avenir, Helvetica, Arial, sans-serif; */
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  font-size: 16px;
-  line-height: 1.5;
-  font-weight: 400;
+  font-family: Inter Tight, Helvetica, Arial, sans-serif;
 
-  color: #242424;
-  background-color: rgba(255, 255, 255, 0.87);
-
+  --text-white-color: #FAFAFA;
+  --text-gray-color: rgba(250, 250, 250, 0.60);
+  --pink-color: #ED3B44;
+  --background-section-color: #1C1D20;
+  --background-element-color: #242527;
 
 }
