@@ -1,0 +1,43 @@
+@import url('./base.css');
+
+.reviews {
+  width: 343px;
+  height: 442px;
+  margin: 0 auto;
+  background-color: #3b3b3b;
+}
+
+.reviews-title {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: -0.02em;
+  color: rgba(250, 250, 250, 0.4);
+  margin-bottom: 32px;
+}
+
+.reviews-swiper {
+  width: 343px;
+  height: 386px;
+}
+
+.reviews-wrapper {
+}
+
+.reviews-item {
+}
+
+.reviews-img {
+}
+
+.reviews-name {
+}
+
+.reviews-text {
+}
+
+.swiper-button-prev {
+}
+
+.swiper-button-next {
+}
