@@ -17,18 +17,28 @@ async function fetchReviews() {
     }
     const data = await response.json();
     renderReviews(data);
-    initializeSwiper();
+    const swiperContainer = document.querySelector('.reviews-swiper');
+    if (swiperContainer) {
+      setTimeout(() => {
+        initializeSwiper();
+      }, 100);
+    } else {
+      console.error('Swiper container is not found');
+    }
   } catch (error) {
     console.log(error.message);
     iziToast.error({
       title: 'Error',
       message: 'Failed to fetch reviews',
     });
-    showError();
   }
 }
 
 function renderReviews(reviews) {
+  if (!reviews || reviews.length === 0) {
+    container.innerHTML = '<li class="not-found">Not found</li>';
+    return;
+  }
   container.innerHTML = '';
 
   reviews.forEach(review => {
@@ -43,11 +53,12 @@ function renderReviews(reviews) {
   });
 }
 
-function showError() {
-  container.innerHTML = '<li class="not-found">Not found</li>';
-}
-
 function initializeSwiper() {
+  if (!swiperContainer || !nextButton || !prevButton) {
+    console.error('Swiper elements are not available');
+    return;
+  }
+
   const swiper = new Swiper('.reviews-swiper', {
     slidesPerView: 1,
     slidesPerGroup: 1,
@@ -76,6 +87,8 @@ function initializeSwiper() {
       fromEdge: () => toggleButtonState('both', false),
     },
   });
+
+  swiper.update();
 }
 
 function toggleButtonState(button, isDisabled) {
@@ -90,5 +103,5 @@ function toggleButtonState(button, isDisabled) {
   }
 }
 document.addEventListener('DOMContentLoaded', () => {
-  fetchReviews(); // Викликати після завантаження DOM
+  fetchReviews();
 });
