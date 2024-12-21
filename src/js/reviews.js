@@ -6,7 +6,7 @@ import 'izitoast/dist/css/iziToast.min.css';
 const container = document.querySelector('.reviews-wrapper');
 const prevButton = document.querySelector('.swiper-button-prev');
 const nextButton = document.querySelector('.swiper-button-next');
-
+const swiperContainer = document.querySelector('.reviews-swiper');
 const API_URL = 'https://portfolio-js.b.goit.study/api/reviews';
 
 async function fetchReviews() {
@@ -17,6 +17,7 @@ async function fetchReviews() {
     }
     const data = await response.json();
     renderReviews(data);
+    initializeSwiper();
   } catch (error) {
     console.log(error.message);
     iziToast.error({
@@ -33,14 +34,13 @@ function renderReviews(reviews) {
   reviews.forEach(review => {
     const reviewHTML = `
         <li class='reviews-item'>
-        <img class='reviews-img'src='${review.avatar_url}' alt ='${review.author}'>
+        <img class='reviews-img'src='${review.avatar_url}' alt ='${review.author}' width='48px' height='48px'>
         <h3 class='reviews-name'>${review.author}</h3>
         <p class='reviews-text'>${review.review}</p>
         </li>
         `;
     container.insertAdjacentHTML('beforeend', reviewHTML);
   });
-  initializeSwiper();
 }
 
 function showError() {
@@ -48,9 +48,9 @@ function showError() {
 }
 
 function initializeSwiper() {
-  const swiper = new Swiper('.rewiews-swiper', {
+  const swiper = new Swiper('.reviews-swiper', {
     slidesPerView: 1,
-    spaceBetween: 10,
+    slidesPerGroup: 1,
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
@@ -60,13 +60,10 @@ function initializeSwiper() {
       onlyInViewport: true,
     },
     breakpoints: {
-      320: {
-        slidesPerView: 1,
-        spaceBetween: 0,
-      },
       768: {
         slidesPerView: 2,
         spaceBetween: 16,
+        allowTouchMove: true,
       },
       1440: {
         slidesPerView: 4,
@@ -92,4 +89,6 @@ function toggleButtonState(button, isDisabled) {
     nextButton.classList.toggle('disabled', isDisabled);
   }
 }
-fetchReviews();
+document.addEventListener('DOMContentLoaded', () => {
+  fetchReviews(); // Викликати після завантаження DOM
+});
