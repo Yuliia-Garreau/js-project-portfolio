@@ -1,8 +1,10 @@
 /* #region mobile*/
 .footer {
-  background-image: url(/src/img/Others/Other_desk/background_desk_2x-min.png);
-
-
+  /* background-image: url(/src/img/Others/Other_desk/background_desk_2x-min.png); */
+/* 
+  background-image: url(../img/Others/Other_mob/Hero_mob.png);
+  background-size: cover;
+  background-repeat: no-repeat; */
 }
 
 .footer-logo {
@@ -21,47 +23,51 @@
 }
 
 .footer-form {
+    display: flex;
+    flex-direction: column;
 }
 
-.footer-input-email {
+.footer-input {
+  max-width: 343px;
+  height: 44px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: -0.02em;
+  color: rgba(250, 250, 250, 0.6);
   background-color: transparent;
 
   border-right: none;
+  border-top: none;
+  border-left: none;
   border-bottom: 1px solid #3b3b3b;
+margin-bottom: 16px;
+
 }
-.footer-input-comm {
-  background-color: transparent;
-  border-right: none;
-  border-bottom: 1px solid #3b3b3b;
-}
-/* .footer-input-comm::after */
-/* .footer-input-email::after
-{
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 1px;
-    display: block;
-    background-color: #fafafa;
-} */
+
 
 .footer-btn-send {
 
-
+    font-weight: 500;
+font-size: 16px;
+letter-spacing: -0.02em;
+color: #fafafa;
   height: 100px;
   width: 100px;
 
   border-radius: 100%;
-  background-color: #ED3B44;
+  background-color: #ed3b44;
   border: none;
+margin-top: 16px;
+margin-bottom: 64px;
+
 }
 .footer-contacts {
-
-    font-weight: 500;
-font-size: 16px;
-line-height: 1.5;
-letter-spacing: -0.02em;
-color: rgba(250, 250, 250, 0.6);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: -0.02em;
+  color: rgba(250, 250, 250, 0.6);
 }
 .footer-link-contacts {
 }
