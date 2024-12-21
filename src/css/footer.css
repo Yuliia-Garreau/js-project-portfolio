@@ -1,0 +1,84 @@
+/* #region mobile*/
+.footer {
+  background-color: #1c1d20;
+}
+
+.footer-logo {
+}
+
+.footer-title {
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  color: #fafafa;
+}
+.footer-title-span {
+  color: #ed3b44;
+}
+
+.footer-form {
+}
+
+.footer-input-email {
+  background-color: transparent;
+
+  border-right: none;
+  border-bottom: 1px solid #3b3b3b;
+}
+.footer-input-comm {
+  background-color: transparent;
+  border-right: none;
+  border-bottom: 1px solid #3b3b3b;
+}
+/* .footer-input-comm::after */
+/* .footer-input-email::after
+{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    display: block;
+    background-color: #fafafa;
+} */
+
+.footer-btn-send {
+
+
+  height: 100px;
+  width: 100px;
+
+  border-radius: 100%;
+  background-color: #ED3B44;
+  border: none;
+}
+.footer-contacts {
+}
+.footer-link-contacts {
+}
+
+/* #endregion mobile*/
+
+/* #region  tab*/
+
+/* #endregion  tab*/
+
+/* #region desk*/
+
+/* #endregion desk*/
+
+/* #region modal*/
+.footer-modal {
+  display: none;
+}
+.footer-modal {
+}
+.footer-close {
+}
+.footer-modal-text {
+}
+.footer-modal-title {
+}
+
+/* #endregion modal*/
