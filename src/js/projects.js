@@ -7,20 +7,12 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 
 
-const nextBtn = document.querySelector(".swiper-button-next");
-const prevBtn = document.querySelector(".swiper-button-prev");
+// const nextBtn = document.querySelector(".swiper-button-next");
+// const prevBtn = document.querySelector(".swiper-button-prev");
+const next = document.querySelector(".next-slide");
+const prev = document.querySelector(".prev-slide");
 
-// init Swiper:
-// const swiper = new Swiper('.swiper', {
 
-//   modules: [Navigation],
-//   direction: 'horizontal',
-//     // // loop: false,
-//     navigation: {
-//         nextEl: '.swiper-button-next',
-//         prevEl: '.swiper-button-prev',
-//     },
-//     // slidesPerView: 1,
 //     // // spaceBetween: 10,
 //     // keyboard: {
 //     //     enabled: true,
@@ -32,21 +24,10 @@ const prevBtn = document.querySelector(".swiper-button-prev");
 //     // //     //   spaceBetween: 32,
 //     // //     },
 //     // //   },
-//     //   on: {
-//     //     reachEnd() {
-//     //       nextBtn.disabled = true;
-//     //     },
-//     //     reachBeginning() {
-//     //       prevBtn.disabled = true;
-//     //     },
-//     //     fromEdge() {
-//     //       nextBtn.disabled = false;
-//     //       prevBtn.disabled = false;
-//     //     },
-//     // },
+//     //   
 // });
 
-const swiper = new Swiper('.swiper', {
+const swiper = new Swiper('.mySwiper', {
   // Parameters
   direction: 'horizontal',
   loop: false,
@@ -57,16 +38,35 @@ const swiper = new Swiper('.swiper', {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
   },
-
+  slidesPerView: 1,
+  spaceBetween: 32,
+  on: {
+            reachEnd() {
+              next.disabled = true;
+              next.classList.remove("active")
+              prev.classList.add("active");
+            },
+            reachBeginning() {
+              prev.disabled = true;
+              prev.classList.remove("active")
+              next.classList.add("active");
+            },
+            fromEdge() {
+              next.disabled = false;
+              next.classList.add("active");
+              prev.disabled = false;
+              prev.classList.add("active");
+            },
+        },
 });
 
-nextBtn.addEventListener('click', () => {
+next.classList.add("active");
+
+next.addEventListener('click', () => {
   swiper.slideNext();
-  console.log("next");
-  
 });
 
-prevBtn.addEventListener('click', () => {
+prev.addEventListener('click', () => {
   swiper.slidePrev();
 });
 
