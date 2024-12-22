@@ -1,4 +1,7 @@
 
+
+
+
 import Swiper from 'swiper/bundle';
 import 'swiper/swiper-bundle.css';
 
@@ -69,4 +72,5 @@ next.addEventListener('click', () => {
 prev.addEventListener('click', () => {
   swiper.slidePrev();
 });
+
 
