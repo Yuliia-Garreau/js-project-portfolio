@@ -6,19 +6,23 @@
   --background-hero-desktop: url('../img/Others/Other_desk/Hero.png');
   --background-hero-desktop-2x: url('../img/Others/Other_desk/Hero@2x.png');
 }
+
 /* ---Mobile--- */
+
 .hero {
   background-image: var(--background-hero-mobile);
   background-size: cover;
   background-repeat: no-repeat;
 }
+
 @media screen and (min-device-pixel-ratio: 2),
-  screen and (min-resolution: 192dpi),
-  screen and (min-resolution: 2dppx) {
+screen and (min-resolution: 192dpi),
+screen and (min-resolution: 2dppx) {
   .hero {
     background-image: var(--background-hero-mobile-2x);
   }
 }
+
 .hero-content {
   display: flex;
   flex-direction: column;
@@ -35,13 +39,15 @@
   color: var(--text-white-color);
   margin-bottom: 212px;
 }
+
 .hero-networks {
   display: flex;
   justify-content: flex-end;
   gap: 4px;
 }
-.hero-networks-item {
-}
+
+.hero-networks-item {}
+
 .hero-networks-link {
   display: flex;
   align-items: center;
@@ -57,6 +63,7 @@
   color: var(--text-white-color);
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 .hero-networks-item:last-child .hero-networks-link {
   width: 178px;
   margin: 0;
@@ -72,26 +79,30 @@
   .hero-title {
     font-size: 90px;
   }
+
   .hero {
     background-image: var(--background-hero-tablet);
   }
 
   @media screen and (min-device-pixel-ratio: 2),
-    screen and (min-resolution: 192dpi),
-    screen and (min-resolution: 2dppx) {
+  screen and (min-resolution: 192dpi),
+  screen and (min-resolution: 2dppx) {
     .hero {
       background-image: var(--background-hero-tablet-2x);
     }
   }
+
   .hero-content {
     padding-top: 300px;
   }
+
   .hero-networks-link {
     padding: 18px 17px;
     width: 53px;
     height: 55px;
     font-size: 16px;
   }
+
   .hero-networks-item:last-child .hero-networks-link {
     padding: 18px 24px;
     width: 223px;
@@ -101,23 +112,27 @@
     gap: 8px;
   }
 }
+
 /* Styles for Desktop devices */
 @media only screen and (min-width: 1200px) {
   .hero {
     background-image: var(--background-hero-desktop);
   }
+
   @media screen and (min-device-pixel-ratio: 2),
-    screen and (min-resolution: 192dpi),
-    screen and (min-resolution: 2dppx) {
+  screen and (min-resolution: 192dpi),
+  screen and (min-resolution: 2dppx) {
     .hero {
       background-image: var(--background-hero-desktop-2x);
     }
   }
+
   .hero-title {
     font-size: 90px;
     padding-left: 146px;
     padding-right: 146px;
   }
+
   .hero-networks-link {
     padding: 18px 20px;
     width: 55px;
