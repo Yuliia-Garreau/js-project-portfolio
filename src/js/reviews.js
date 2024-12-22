@@ -3,10 +3,10 @@ import 'swiper/css';
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 
-const container = document.querySelector('.reviews-wrapper');
-const prevButton = document.querySelector('.swiper-button-prev');
-const nextButton = document.querySelector('.swiper-button-next');
-const swiperContainer = document.querySelector('.reviews-swiper');
+const container = document.querySelector('.reviews .reviews-wrapper');
+const prevButton = document.querySelector('.reviews .swiper-button-prev');
+const nextButton = document.querySelector('.reviews .swiper-button-next');
+const swiperContainer = document.querySelector('.reviews .reviews-swiper');
 const API_URL = 'https://portfolio-js.b.goit.study/api/reviews';
 
 async function fetchReviews() {
@@ -16,15 +16,16 @@ async function fetchReviews() {
       throw new Error(response.statusText);
     }
     const data = await response.json();
+
     renderReviews(data);
-    const swiperContainer = document.querySelector('.reviews-swiper');
-    if (swiperContainer) {
-      setTimeout(() => {
-        initializeSwiper();
-      }, 100);
-    } else {
-      console.error('Swiper container is not found');
-    }
+
+    const slides = document.querySelectorAll('.swiper-slide');
+
+    // if (slides.length > 0) {
+    //   setTimeout(() => {
+    //     initializeSwiper();
+    //   }, 100);
+    // }
   } catch (error) {
     console.log(error.message);
     iziToast.error({
@@ -43,7 +44,7 @@ function renderReviews(reviews) {
 
   reviews.forEach(review => {
     const reviewHTML = `
-        <li class='reviews-item'>
+        <li class='swiper-slide'>
         <img class='reviews-img'src='${review.avatar_url}' alt ='${review.author}' width='48px' height='48px'>
         <h3 class='reviews-name'>${review.author}</h3>
         <p class='reviews-text'>${review.review}</p>
@@ -59,7 +60,7 @@ function initializeSwiper() {
     return;
   }
 
-  const swiper = new Swiper('.reviews-swiper', {
+  const swiper = new Swiper(swiperContainer, {
     slidesPerView: 1,
     slidesPerGroup: 1,
     navigation: {
