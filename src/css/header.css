@@ -171,6 +171,8 @@
     display: block;
 }
 
+/* Media */
+
 @media only screen and (max-width: 400px) {
     .header-menu__link {
         display: none;
