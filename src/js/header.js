@@ -14,3 +14,10 @@ document.addEventListener('click', function (event) {
     menuList.classList.remove('show');
   }
 });
+
+// header append hero
+
+const header = document.querySelector('.header');
+const hero = document.querySelector('.hero');
+
+hero.insertBefore(header, hero.firstChild);
