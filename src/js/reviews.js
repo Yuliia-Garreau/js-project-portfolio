@@ -1,12 +1,16 @@
-import Swiper from 'swiper';
+import Swiper from 'swiper/bundle';
+import 'swiper/swiper-bundle.css';
+import { Navigation } from 'swiper/modules';
 import 'swiper/css';
+import 'swiper/css/navigation';
+
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 
-const container = document.querySelector('.reviews .reviews-wrapper');
-const prevButton = document.querySelector('.reviews .swiper-button-prev');
-const nextButton = document.querySelector('.reviews .swiper-button-next');
-const swiperContainer = document.querySelector('.reviews .reviews-swiper');
+const container = document.querySelector('.reviews-wrapper');
+const prevButton = document.querySelector('.reviews-swiper-button-prev');
+const nextButton = document.querySelector('.reviews-swiper-button-next');
+const swiperContainer = document.querySelector('.reviews-swiper');
 const API_URL = 'https://portfolio-js.b.goit.study/api/reviews';
 
 async function fetchReviews() {
@@ -21,11 +25,11 @@ async function fetchReviews() {
 
     const slides = document.querySelectorAll('.swiper-slide');
 
-    // if (slides.length > 0) {
-    //   setTimeout(() => {
-    //     initializeSwiper();
-    //   }, 100);
-    // }
+    if (slides.length > 0) {
+      setTimeout(() => {
+        initializeSwiper(swiperContainer);
+      }, 100);
+    }
   } catch (error) {
     console.log(error.message);
     iziToast.error({
@@ -60,12 +64,15 @@ function initializeSwiper() {
     return;
   }
 
-  const swiper = new Swiper(swiperContainer, {
+  const swiper = new Swiper('.reviews-mySwiper', {
+    direction: 'horizontal',
+    loop: true,
+    modules: [Navigation],
     slidesPerView: 1,
     slidesPerGroup: 1,
     navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
+      nextEl: '.reviews-swiper-button-next',
+      prevEl: '.reviews-swiper-button-prev',
     },
     keyboard: {
       enabled: true,
@@ -74,35 +81,49 @@ function initializeSwiper() {
     breakpoints: {
       768: {
         slidesPerView: 2,
-        spaceBetween: 16,
+        // slidesPerGroup: 2,
+        // spaceBetween: 16,
         allowTouchMove: true,
       },
       1440: {
         slidesPerView: 4,
-        spaceBetween: 16,
+        // slidesPerGroup: 4,
+        // spaceBetween: 16,
       },
     },
     on: {
-      reachEnd: () => toggleButtonState('next', true),
-      reachBeginning: () => toggleButtonState('prev', true),
-      fromEdge: () => toggleButtonState('both', false),
+      reachEnd() {
+        nextButton.disabled = true;
+        nextButton.classList.remove('active');
+        prevButton.classList.add('active');
+      },
+      reachBeginning() {
+        prevButton.disabled = true;
+        prevButton.classList.remove('active');
+        nextButton.classList.add('active');
+      },
+      fromEdge() {
+        nextButton.disabled = false;
+        nextButton.classList.add('active');
+        prevButton.disabled = false;
+        prevButton.classList.add('active');
+      },
     },
   });
 
-  swiper.update();
+  nextButton.classList.add('active');
+  prevButton.disabled = true;
+
+  nextButton.addEventListener('click', () => {
+    swiper.slideNext();
+  });
+
+  prevButton.addEventListener('click', () => {
+    swiper.slidePrev();
+  });
+  // swiper.update();
 }
 
-function toggleButtonState(button, isDisabled) {
-  if (button === 'prev' || button === 'both') {
-    prevButton.disabled = isDisabled;
-    prevButton.classList.toggle('disabled', isDisabled);
-  }
-
-  if (button === 'next' || button === 'both') {
-    nextButton.disabled = isDisabled;
-    nextButton.classList.toggle('disabled', isDisabled);
-  }
-}
 document.addEventListener('DOMContentLoaded', () => {
   fetchReviews();
 });
