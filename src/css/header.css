@@ -1,9 +1,8 @@
 .header {
-
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: gray;
+    background-color: transparent;
 }
 
 .header-logo {
@@ -109,4 +108,20 @@
     background: var(--pink-color-focus);
     color: var(--text-white-color-focus);
     box-shadow: 0 0 0 2px var(--pink-color-focus);
+}
+
+@media (max-width: 375px) {
+    /* Верстка для мобильных устройств с размером экрана до 375px */
+}
+
+@media (min-width: 375px) and (max-width: 767px) {
+    /* Верстка для мобильных устройств с размером экрана от 375px до 767px */
+}
+
+@media (min-width: 768px) and (max-width: 1439px) {
+    /* Верстка для таблетов с размером экрана от 768px до 1439px */
+}
+
+@media (min-width: 1440px) {
+    /* Верстка для десктопов с размером экрана 1440px и более */
 }
