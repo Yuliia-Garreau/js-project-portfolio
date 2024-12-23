@@ -21,3 +21,21 @@ const header = document.querySelector('.header');
 const hero = document.querySelector('.hero');
 
 hero.insertBefore(header, hero.firstChild);
+
+// header mobile menu
+
+document.querySelector('.header-burger').addEventListener('click', () => {
+  document.querySelector('.header-burger').classList.toggle('active');
+  document.querySelector('.header-menu').classList.toggle('show');
+});
+
+// header modal
+
+const modalMobile = document.querySelector('.header-menu');
+const modalList = document.querySelector('.header-menu__list');
+const buttonModal = document.createElement('a');
+buttonModal.classList.add('header-button__mobile');
+buttonModal.href = '#';
+buttonModal.textContent = 'Order the project';
+modalMobile.appendChild(modalList);
+modalMobile.appendChild(buttonModal);
