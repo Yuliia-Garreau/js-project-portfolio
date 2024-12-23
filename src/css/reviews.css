@@ -2,26 +2,44 @@
 
 .reviews {
   width: 376px;
-  height: 442px;
-  padding: 0;
+  height: 570px;
+  padding: 64px 16px;
   background-color: var(--background-section-color);
   margin: 0 auto;
 }
 @media screen and (min-width: 768px) {
   .reviews {
     width: 768px;
-    height: 458px;
+    height: 650px;
+    padding: 96px 32px;
   }
 }
 
 @media screen and (min-width: 1440px) {
   .reviews {
     width: 1440px;
+    height: 786px;
+    padding: 164px 32px;
   }
 }
 
-.container {
+.reviews-container {
+  width: 344px;
   height: 442px;
+  padding: 0 auto;
+}
+
+@media screen and (min-width: 768px) {
+  .reviews-container {
+    width: 704px;
+    height: 458px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .reviews-container {
+    width: 1376px;
+  }
 }
 
 .reviews-title {
@@ -65,27 +83,35 @@
   overflow: hidden;
 }
 
-/* .reviews-wrapper li:not(:first-child) {
-  display: none;
-} */
+@media screen and (min-width: 768px) {
+  .reviews-wrapper {
+    width: 704px;
+    height: 302px;
+  }
+}
 
-.swiper-slide {
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-  flex-direction: column;
-  gap: 16px;
+@media screen and (min-width: 1440px) {
+  .reviews-wrapper {
+    width: 1376px;
+  }
+}
+
+.reviews-item {
   border: 1px solid rgba(250, 250, 250, 0.2);
   border-radius: 20px;
   padding: 32px 24px;
   width: 344px;
   height: 302px;
 }
+@media screen and (min-width: 768px) {
+  .reviews-item {
+    width: calc(100% -16px) / 2;
+  }
+}
 
 @media screen and (min-width: 1440px) {
-  .swiper-slide {
-    width: 332px;
-    height: 302px;
+  .reviews-item {
+    width: calc(100%- (16px * 3)) / 4;
   }
 }
 
@@ -136,7 +162,6 @@
 }
 
 .reviews-swiper-button-prev {
-  /* position: absolute; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -153,7 +178,6 @@
 }
 
 .reviews-swiper-button-next {
-  /* position: absolute; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -181,27 +205,33 @@
 
 .reviews-arrow-prev,
 .reviews-arrow-next {
+  stroke: #3b3b3b;
   color: #3b3b3b;
+  fill: none;
   display: block;
-  overflow: visible !important;
+  overflow: visible;
   visibility: visible;
   opacity: 1;
 }
 
 .active {
   border: 1px solid rgba(250, 250, 250, 0.5);
+  stroke: var(--text-white-color);
   color: var(--text-white-color);
+  fill: none;
 }
 
-svg,
-use {
-  overflow: visible !important;
-  fill: #3b3b3b;
-  stroke: #3b3b3b;
-  color: #3b3b3b;
+.active-arr {
+  stroke: var(--text-white-color);
+  color: var(--text-white-color);
+  fill: none;
   display: block;
+  overflow: visible;
+  visibility: visible;
   opacity: 1;
 }
+
 .not-found {
-  color: var(--text-white-color);
+  color: #e74c3c;
+  font-size: large;
 }

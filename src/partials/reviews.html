@@ -1,28 +1,23 @@
 <link rel="stylesheet" href="./css/reviews.css" />
-<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 
-<section class="reviews">
-  <div class="container">
+<section class="reviews container">
+  <div class="reviews-container">
     <h1 class="reviews-title">REVIEWS</h1>
     <div class="reviews-swiper reviews-mySwiper">
       <ul class="reviews-wrapper"></ul>
       <div class="reviews-swiper-btns">
         <button class="reviews-swiper-button-prev" disabled>
           <svg class="reviews-arrow-prev" width="32" height="32">
-            <use href="../icon.svg#icon-arrow-narrow-left"></use>
+            <use href="/icon.svg#icon-arrow-narrow-left"></use>
           </svg>
         </button>
 
-        <button class="reviews-swiper-button-next">
-          <svg class="reviews-arrow-next" width="32" height="32">
-            <use href="../icon.svg#icon-arrow-narrow-right"></use>
+        <button class="reviews-swiper-button-next active">
+          <svg class="reviews-arrow-next active-arr" width="32" height="32">
+            <use href="/icon.svg#icon-arrow-narrow-right"></use>
           </svg>
         </button>
       </div>
     </div>
   </div>
 </section>
-
-<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-
-<script type="module" src="./js/reviews.js"></script>

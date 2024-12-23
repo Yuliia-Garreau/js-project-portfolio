@@ -11,6 +11,9 @@ const container = document.querySelector('.reviews-wrapper');
 const prevButton = document.querySelector('.reviews-swiper-button-prev');
 const nextButton = document.querySelector('.reviews-swiper-button-next');
 const swiperContainer = document.querySelector('.reviews-swiper');
+const prevArrow = document.querySelector('.reviews-arrow-prev');
+const nextArrow = document.querySelector('.reviews-arrow-next');
+
 const API_URL = 'https://portfolio-js.b.goit.study/api/reviews';
 
 async function fetchReviews() {
@@ -23,11 +26,11 @@ async function fetchReviews() {
 
     renderReviews(data);
 
-    const slides = document.querySelectorAll('.swiper-slide');
+    const slides = document.querySelectorAll('.reviews-item');
 
     if (slides.length > 0) {
       setTimeout(() => {
-        initializeSwiper(swiperContainer);
+        initializeSwiper();
       }, 100);
     }
   } catch (error) {
@@ -35,6 +38,8 @@ async function fetchReviews() {
     iziToast.error({
       title: 'Error',
       message: 'Failed to fetch reviews',
+      position: 'topRight',
+      color: '#e74c3c',
     });
   }
 }
@@ -46,9 +51,9 @@ function renderReviews(reviews) {
   }
   container.innerHTML = '';
 
-  reviews.forEach(review => {
+  reviews.map(review => {
     const reviewHTML = `
-        <li class='swiper-slide'>
+        <li class='reviews-item swiper-slide'>
         <img class='reviews-img'src='${review.avatar_url}' alt ='${review.author}' width='48px' height='48px'>
         <h3 class='reviews-name'>${review.author}</h3>
         <p class='reviews-text'>${review.review}</p>
@@ -59,17 +64,18 @@ function renderReviews(reviews) {
 }
 
 function initializeSwiper() {
-  if (!swiperContainer || !nextButton || !prevButton) {
-    console.error('Swiper elements are not available');
-    return;
-  }
+  // if (!swiperContainer || !nextButton || !prevButton) {
+  //   console.error('Swiper elements are not available');
+  //   return;
+  // }
 
-  const swiper = new Swiper('.reviews-mySwiper', {
+  const swiper = new Swiper('.reviews-my-swiper', {
     direction: 'horizontal',
-    loop: true,
+    loop: false,
     modules: [Navigation],
     slidesPerView: 1,
     slidesPerGroup: 1,
+    allowTouchMove: true,
     navigation: {
       nextEl: '.reviews-swiper-button-next',
       prevEl: '.reviews-swiper-button-prev',
@@ -81,37 +87,44 @@ function initializeSwiper() {
     breakpoints: {
       768: {
         slidesPerView: 2,
-        // slidesPerGroup: 2,
-        // spaceBetween: 16,
+        slidesPerGroup: 1,
+        spaceBetween: 16,
         allowTouchMove: true,
       },
       1440: {
         slidesPerView: 4,
-        // slidesPerGroup: 4,
-        // spaceBetween: 16,
+        slidesPerGroup: 1,
+        spaceBetween: 16,
       },
     },
     on: {
       reachEnd() {
         nextButton.disabled = true;
         nextButton.classList.remove('active');
+        nextArrow.classList.remove('active-arr');
         prevButton.classList.add('active');
+        prevArrow.classList.add('active-arr');
       },
       reachBeginning() {
         prevButton.disabled = true;
         prevButton.classList.remove('active');
+        prevArrow.classList.remove('active-arr');
         nextButton.classList.add('active');
+        nextArrow.classList.add('active-arr');
       },
       fromEdge() {
         nextButton.disabled = false;
         nextButton.classList.add('active');
+        nextArrow.classList.add('active-arr');
         prevButton.disabled = false;
         prevButton.classList.add('active');
+        prevArrow.classList.add('active-arr');
       },
     },
   });
 
-  nextButton.classList.add('active');
+  // nextButton.classList.add('active');
+  // nextArroe.classList.add('active-arr');
   prevButton.disabled = true;
 
   nextButton.addEventListener('click', () => {
