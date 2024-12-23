@@ -168,10 +168,12 @@
 }
 
 .header-menu.show {
-    display: block;
+    display: flex;
 }
 
-@media only screen and (max-width: 375px) {
+/* Media */
+
+@media only screen and (max-width: 400px) {
     .header-menu__link {
         display: none;
     }
@@ -195,46 +197,96 @@
         bottom: 0;
         right: 0;
         overflow-y: auto;
-        background-color: var(--pink-color);
+        background-image: url(/img/Header/header_modal_mob-min.png), url(/img/Header/header_modal_mob@2x-min.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
         z-index: 50;
         animation: burgerAnimation 0.4s;
     }
 
     .header-menu__list {
         display: block;
-        padding: 20px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
         text-align: center;
     }
 
     .header-menu__item {
-        display: block;
-        padding: 10px;
-        border-bottom: 1px solid #ccc;
+        /* text-decoration: underline; */
     }
 
-    .header-menu__item a {
-        display: block;
-        text-decoration: none;
-        color: #fff;
+
+    .header-button__mobile {
+        margin-top: auto;
+        margin-bottom: 78px;
+        margin-left: auto;
+        margin-right: auto;
+        width: fit-content;
+        height: fit-content;
+
+        color: var(--text-white-color);
+        font-family: "Inter Tight";
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        letter-spacing: -0.28px;
+        border: none;
+        cursor: pointer;
+
+        border-radius: 60px;
+        background: var(--pink-color);
+        padding: 14px 32px;
+
+        transition: background 0.2s ease-in-out, color 0.2s ease-in-out;
     }
+
+    .header-button__mobile:hover {
+        background: var(--pink-color-hover);
+        color: var(--text-white-color-hover);
+    }
+
+    .header-button__mobile:focus {
+        background: var(--pink-color-focus);
+        color: var(--text-white-color-focus);
+        box-shadow: 0 0 0 2px var(--pink-color-focus);
+    }
+
 
 
 }
 
 
 
-@media only screen and (min-width: 375px) and (max-width: 767px) {
+
+
+@media only screen and (min-width: 401px) and (max-width: 767px) {
     .header-button {
         padding: 18px 24px;
+    }
+
+    .header-button__mobile {
+        display: none;
     }
 }
 
 @media (min-width: 768px) and (max-width: 1439px) {
+
     /* Верстка для таблетов с размером экрана от 768px до 1439px */
+    .header-button__mobile {
+        display: none;
+    }
 }
 
 @media (min-width: 1440px) {
+
     /* Верстка для десктопов с размером экрана 1440px и более */
+    .header-button__mobile {
+        display: none;
+    }
 }
 
 @keyframes burgerAnimation {

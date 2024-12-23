@@ -30,3 +30,12 @@ document.querySelector('.header-burger').addEventListener('click', () => {
 });
 
 // header modal
+
+const modalMobile = document.querySelector('.header-menu');
+const modalList = document.querySelector('.header-menu__list');
+const buttonModal = document.createElement('a');
+buttonModal.classList.add('header-button__mobile');
+buttonModal.href = '#';
+buttonModal.textContent = 'Order the project';
+modalMobile.appendChild(modalList);
+modalMobile.appendChild(buttonModal);
