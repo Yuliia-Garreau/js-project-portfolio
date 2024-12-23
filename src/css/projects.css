@@ -15,7 +15,7 @@
     text-transform: uppercase;
     color: rgba(250, 250, 250, 0.4);
     margin-bottom: 32px;
-    margin-left: auto;
+    margin-left: 32px;
     margin-right: auto;
     display: flex;
 }
