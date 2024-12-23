@@ -1,4 +1,7 @@
 
+
+
+
 import Swiper from 'swiper/bundle';
 import 'swiper/swiper-bundle.css';
 
@@ -7,20 +10,14 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 
 
-const nextBtn = document.querySelector(".swiper-button-next");
-const prevBtn = document.querySelector(".swiper-button-prev");
+// const nextBtn = document.querySelector(".swiper-button-next");
+// const prevBtn = document.querySelector(".swiper-button-prev");
+const next = document.querySelector(".next-slide");
+const prev = document.querySelector(".prev-slide");
+const arrowNext = document.querySelector(".arrow-narrow-next");
+const arrowPrev = document.querySelector(".arrow-narrow-prev");
 
-// init Swiper:
-// const swiper = new Swiper('.swiper', {
 
-//   modules: [Navigation],
-//   direction: 'horizontal',
-//     // // loop: false,
-//     navigation: {
-//         nextEl: '.swiper-button-next',
-//         prevEl: '.swiper-button-prev',
-//     },
-//     // slidesPerView: 1,
 //     // // spaceBetween: 10,
 //     // keyboard: {
 //     //     enabled: true,
@@ -32,21 +29,10 @@ const prevBtn = document.querySelector(".swiper-button-prev");
 //     // //     //   spaceBetween: 32,
 //     // //     },
 //     // //   },
-//     //   on: {
-//     //     reachEnd() {
-//     //       nextBtn.disabled = true;
-//     //     },
-//     //     reachBeginning() {
-//     //       prevBtn.disabled = true;
-//     //     },
-//     //     fromEdge() {
-//     //       nextBtn.disabled = false;
-//     //       prevBtn.disabled = false;
-//     //     },
-//     // },
+//     //   
 // });
 
-const swiper = new Swiper('.swiper', {
+const swiper = new Swiper('.mySwiper', {
   // Parameters
   direction: 'horizontal',
   loop: false,
@@ -57,16 +43,43 @@ const swiper = new Swiper('.swiper', {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
   },
-
+  slidesPerView: 1,
+  spaceBetween: 32,
+  on: {
+            reachEnd() {
+              next.disabled = true;
+              next.classList.remove("active")
+              arrowNext.classList.remove("active-arrow")
+              prev.classList.add("active");
+              arrowPrev.classList.add("active-arrow");
+            },
+            reachBeginning() {
+              prev.disabled = true;
+              prev.classList.remove("active")
+              arrowPrev.classList.remove("active-arrow")
+              next.classList.add("active");
+              arrowNext.classList.add("active-arrow")
+            },
+            fromEdge() {
+              next.disabled = false;
+              next.classList.add("active");
+              arrowNext.classList.add("active-arrow")
+              prev.disabled = false;
+              prev.classList.add("active");
+              arrowPrev.classList.add("active-arrow")
+            },
+        },
 });
 
-nextBtn.addEventListener('click', () => {
+next.classList.add("active");
+arrowNext.classList.add("active-arrow")
+
+next.addEventListener('click', () => {
   swiper.slideNext();
-  console.log("next");
-  
 });
 
-prevBtn.addEventListener('click', () => {
+prev.addEventListener('click', () => {
   swiper.slidePrev();
 });
+
 

@@ -44,10 +44,5 @@ export default defineConfig(({ command }) => {
         sort: 'mobile-first',
       }),
     ],
-    resolve: {
-      alias: {
-        '@': './src/js',
-      },
-    },
   };
 });
