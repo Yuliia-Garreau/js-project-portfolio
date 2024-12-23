@@ -69,7 +69,11 @@
   width: 282px;
   height: 163px;
   flex-shrink: 0;
-  animation: marqueeLine 120s linear infinite;
+  animation: marqueeLine 120s linear infinite paused;
+}
+
+.covers-item.start {
+  animation-play-state: running;
 }
 
 .covers-img {
