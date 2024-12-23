@@ -4,8 +4,12 @@
     justify-content: flex-start;
     flex-direction: column;
     gap: 32px;
-    width: 375px;
+    max-width: 375px;
+    background-color: #1c1d20;
+    padding-top: 64px;
     padding-bottom: 64px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .title-container {
@@ -326,6 +330,7 @@ DESKTOP
     .about {
         gap: 96px;
         width: 1440px;
+        padding-top: 96px;
         padding-bottom: 164px;
     }
 
