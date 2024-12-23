@@ -100,7 +100,10 @@
     padding-left: 16px;
     padding-right: 16px;
 }
-
+.project-image {
+    outline: 5px solid var(--background-element-color);
+    outline-offset: -5px;
+}
 .swiper-button-prev.prev {
     display: none;
 }
@@ -110,8 +113,9 @@
 }
 
 .swiper {
-    width: 343px;
+    max-width: 343px;
     height: 812px;
+    border-radius: 0 0 24px 24px;
 }
 
 .slide-btns {
@@ -214,7 +218,7 @@
     .black-div {
         width: 704px;
         height: 625px;
-        margin-top: 566px;
+        margin-top: 567px;
         padding-top: 120px;
         padding-bottom: 120px;
         padding-left: 45px;
@@ -223,7 +227,7 @@
     }
 
     .swiper {
-        width: 704px;
+        max-width: 704px;
         height: 1191px;
         border-radius: 0 0 24px 24px;
     }
@@ -261,7 +265,7 @@
     }
 
     .section-content {
-        max-width: 1312px;
+        max-width: 1376px;
         height: 625px;
 
     }
@@ -281,7 +285,7 @@
     }
 
     .swiper {
-        width: 1312px;
+        max-width: 1376px;
         height: 625px;
         border-radius: 0 24px 24px 0;
     }
