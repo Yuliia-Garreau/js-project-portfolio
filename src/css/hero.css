@@ -1,23 +1,15 @@
-:root {
-  --background-hero-mobile: url('../img/Others/Other_mob/Hero_mob.png');
-  --background-hero-mobile-2x: url('../img/Others/Other_mob/Hero@2x_mob.png');
-  --background-hero-tablet: url('../img/Others/Other_tab/Hero_tab.png');
-  --background-hero-tablet-2x: url('../img/Others/Other_tab/Hero@2x_tab.png');
-  --background-hero-desktop: url('../img/Others/Other_desk/Hero.png');
-  --background-hero-desktop-2x: url('../img/Others/Other_desk/Hero@2x.png');
-}
-
 /* ---Mobile--- */
 
 .hero {
   background-image: var(--background-hero-mobile);
   background-size: cover;
   background-repeat: no-repeat;
+  transition: background-image 0.5s ease;
 }
 
 @media screen and (min-device-pixel-ratio: 2),
-screen and (min-resolution: 192dpi),
-screen and (min-resolution: 2dppx) {
+  screen and (min-resolution: 192dpi),
+  screen and (min-resolution: 2dppx) {
   .hero {
     background-image: var(--background-hero-mobile-2x);
   }
@@ -46,7 +38,8 @@ screen and (min-resolution: 2dppx) {
   gap: 4px;
 }
 
-.hero-networks-item {}
+.hero-networks-item {
+}
 
 .hero-networks-link {
   display: flex;
@@ -85,8 +78,8 @@ screen and (min-resolution: 2dppx) {
   }
 
   @media screen and (min-device-pixel-ratio: 2),
-  screen and (min-resolution: 192dpi),
-  screen and (min-resolution: 2dppx) {
+    screen and (min-resolution: 192dpi),
+    screen and (min-resolution: 2dppx) {
     .hero {
       background-image: var(--background-hero-tablet-2x);
     }
@@ -120,8 +113,8 @@ screen and (min-resolution: 2dppx) {
   }
 
   @media screen and (min-device-pixel-ratio: 2),
-  screen and (min-resolution: 192dpi),
-  screen and (min-resolution: 2dppx) {
+    screen and (min-resolution: 192dpi),
+    screen and (min-resolution: 2dppx) {
     .hero {
       background-image: var(--background-hero-desktop-2x);
     }
@@ -137,4 +130,20 @@ screen and (min-resolution: 2dppx) {
     padding: 18px 20px;
     width: 55px;
   }
+}
+
+/* theme-switcher */
+#theme-switcher {
+  width: 80px;
+  position: relative;
+  top: -260px;
+  outline: none;
+  right: -20px;
+  border-radius: 30px;
+  padding-left: 4px;
+  background-color: transparent;
+  color: var(--text-white-color);
+}
+#theme-switcher option {
+  background-color: transparent;
 }
