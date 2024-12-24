@@ -1,10 +1,12 @@
 /* #region mobile*/
+
 .footer {
+  background-color: #1c1d20;
 }
 
-.footer-logo {
-  width: 44px;
-  height: 44px;
+.footer-con-title {
+  padding-top: 32px;
+  max-width: 267px;
 }
 
 .footer-title {
@@ -14,12 +16,18 @@
   letter-spacing: -0.03em;
   text-transform: uppercase;
   color: #fafafa;
+  font-family: 'Inter Tight', sans-serif;
 
   margin-bottom: 63px;
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
 }
+
+.footer-logo {
+  width: 44px;
+  height: 44px;
+}
+
 .footer-title-span {
   color: #ed3b44;
 }
@@ -30,15 +38,32 @@
 }
 
 .footer-input {
-  max-width: 343px;
+  font-family: 'Inter Tight', sans-serif;
+  width: 343px;
   height: 44px;
   background-color: transparent;
+
+  line-height: 1.5;
+  letter-spacing: -0.02em;
+  color: rgba(250, 250, 250, 0.6);
 
   border-right: none;
   border-top: none;
   border-left: none;
   border-bottom: 1px solid #3b3b3b;
   margin-bottom: 16px;
+  padding-bottom: 30px;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.footer-input:focus {
+  outline: none;
+  /* border: none; */
 }
 
 .footer-input::placeholder {
@@ -49,55 +74,186 @@
 
   color: rgba(250, 250, 250, 0.6);
 }
-
+.footer-input::placeholder:hover,
+.footer-input::placeholder:focus {
+  color: #fafafa;
+}
 .footer-btn-send {
+  font-family: sans-serif;
   font-weight: 500;
   font-size: 16px;
   letter-spacing: -0.02em;
   color: #fafafa;
   height: 100px;
   width: 100px;
-
+  padding: 0;
   border-radius: 100%;
   background-color: #ed3b44;
   border: none;
   margin-top: 16px;
   margin-bottom: 64px;
 }
+
+.footer-btn-send:hover,
+.footer-btn-send:focus {
+  background-color: #e0373f;
+}
+
 .footer-contacts {
   display: flex;
   gap: 4px;
+
+  padding-bottom: 32px;
 }
-.footer-link-contacts {
+.footer-list-link {
   font-weight: 500;
-  font-size: 14px;
+  font-size: 16px;
   letter-spacing: -0.02em;
   color: #fafafa;
 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 10px;
+
   border: 1px solid rgba(250, 250, 250, 0.2);
+
   border-radius: 60px;
   padding: 10px 12px;
+  max-width: 178px;
+  height: 37px;
+}
+
+.footer-list-link:hover,
+.footer-list-link:focus {
+  border: 1px solid #fafafa;
+}
+
+.footer-link-contacts {
+  font-family: sans-serif;
+
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: -0.02em;
+  color: #fafafa;
+  text-align: center;
+  white-space: nowrap;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  gap: 4px;
 }
 
 /* #endregion mobile*/
 
 /* #region  tab*/
+@media screen and (min-width: 768px) {
+  .footer-con-title {
+    max-width: 542px;
+    padding-top: 80px;
+  }
+
+  .footer-title {
+    padding-top: 88px;
+    font-size: 64px;
+    margin-bottom: 0;
+  }
+
+  .footer-logo {
+    border-radius: 24px;
+    width: 70px;
+    height: 70px;
+    margin-right: 20px;
+  }
+
+  .footer-form {
+    flex-direction: row;
+    gap: 32px;
+    display: flex;
+    align-items: baseline;
+  }
+
+  .footer-input {
+    width: 245px;
+    margin-bottom: 78px;
+  }
+
+  .footer-btn-send {
+    width: 150px;
+    height: 150px;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .footer-contacts {
+    gap: 8px;
+    padding-bottom: 169px;
+  }
+
+  .footer-link-contacts {
+    max-width: 239px;
+    height: 55px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    gap: 10px;
+  }
+  .footer-list-link {
+    max-width: 239px;
+    height: 55px;
+  }
+}
 
 /* #endregion  tab*/
 
 /* #region desk*/
+@media screen and (min-width: 1440px) {
+  .footer {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    padding-left: 196px;
+  }
+
+  .footer-item-form {
+    margin-right: 68px;
+    display: flex;
+  }
+
+  .footer-input {
+    width: 390px;
+    padding: 54px;
+  }
+}
 
 /* #endregion desk*/
 
 /* #region modal*/
 .footer-modal {
-  display: none;
+  /* display: none; */
 }
 .footer-modal {
 }
+
+
+.footer-icon-close {
+  stroke: #1c1d20;
+width: 22px;
+height: 22px;
+display: flex;
+justify-content: center;
+align-items: center;
+ 
+}
+
+
 .footer-close {
+padding: 0;
+
 }
 .footer-modal-text {
+  color: #3b3b3b;
 }
 .footer-modal-title {
 }

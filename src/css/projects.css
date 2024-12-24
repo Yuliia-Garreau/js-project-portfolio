@@ -288,6 +288,17 @@ use {
   text-transform: uppercase;
   color: rgba(250, 250, 250, 0.4);
   margin-bottom: 32px;
+  margin-left: 32px;
+  margin-right: auto;
+  display: flex;
+  font-family: 'Inter Tight', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: rgba(250, 250, 250, 0.4);
+  margin-bottom: 32px;
   margin-left: auto;
   margin-right: auto;
   display: flex;
@@ -373,7 +384,10 @@ use {
   padding-left: 16px;
   padding-right: 16px;
 }
-
+.project-image {
+  outline: 5px solid var(--background-element-color);
+  outline-offset: -5px;
+}
 .swiper-button-prev.prev {
   display: none;
 }
@@ -383,6 +397,9 @@ use {
 }
 
 .swiper {
+  max-width: 343px;
+  height: 812px;
+  border-radius: 0 0 24px 24px;
   width: 343px;
   height: 812px;
 }
@@ -486,6 +503,16 @@ use {
   .black-div {
     width: 704px;
     height: 625px;
+    margin-top: 567px;
+    padding-top: 120px;
+    padding-bottom: 120px;
+    padding-left: 45px;
+    padding-right: 45px;
+    margin-left: -558px;
+  }
+  .black-div {
+    width: 704px;
+    height: 625px;
     margin-top: 566px;
     padding-top: 120px;
     padding-bottom: 120px;
@@ -494,6 +521,11 @@ use {
     margin-left: -558px;
   }
 
+  .swiper {
+    max-width: 704px;
+    height: 1191px;
+    border-radius: 0 0 24px 24px;
+  }
   .swiper {
     width: 704px;
     height: 1191px;
@@ -533,6 +565,10 @@ use {
   }
 
   .section-content {
+    max-width: 1376px;
+    height: 625px;
+  }
+  .section-content {
     max-width: 1312px;
     height: 625px;
   }
@@ -551,6 +587,14 @@ use {
     margin-top: 0;
   }
 
+  .swiper {
+    max-width: 1376px;
+    height: 625px;
+    border-radius: 0 24px 24px 0;
+  }
+  .slide-btns {
+    padding-bottom: 164px;
+  }
   .swiper {
     width: 1312px;
     height: 625px;

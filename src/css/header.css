@@ -173,7 +173,7 @@
 
 /* Media */
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 375px) {
     .header-menu__link {
         display: none;
     }
@@ -196,7 +196,8 @@
         left: 0;
         bottom: 0;
         right: 0;
-        overflow-y: auto;
+        /* overflow-y: hidden;
+        -webkit-overflow-scrolling: touch; */
         background-image: url(/img/Header/header_modal_mob-min.png), url(/img/Header/header_modal_mob@2x-min.png);
         background-repeat: no-repeat;
         background-size: cover;
@@ -263,7 +264,7 @@
 
 
 
-@media only screen and (min-width: 401px) and (max-width: 767px) {
+@media only screen and (min-width: 375px) and (max-width: 767px) {
     .header-button {
         padding: 18px 24px;
     }
@@ -273,7 +274,7 @@
     }
 }
 
-@media (min-width: 768px) and (max-width: 1439px) {
+@media only screen and (min-width: 768px) and (max-width: 1439px) {
 
     /* Верстка для таблетов с размером экрана от 768px до 1439px */
     .header-button__mobile {
@@ -281,7 +282,7 @@
     }
 }
 
-@media (min-width: 1440px) {
+@media only screen and (min-width: 1440px) {
 
     /* Верстка для десктопов с размером экрана 1440px и более */
     .header-button__mobile {
