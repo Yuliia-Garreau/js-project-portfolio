@@ -1,7 +1,8 @@
 .header {
+    padding-top: 32px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     background-color: transparent;
 }
 
@@ -15,9 +16,9 @@
     color: var(--text-white-color);
 }
 
-.header-menu {
+/* .header-menu {
     position: relative;
-}
+} */
 
 .header-menu__link {
     color: var(--text-white-color);
@@ -173,7 +174,7 @@
 
 /* Media */
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 375px) {
     .header-menu__link {
         display: none;
     }
@@ -264,7 +265,7 @@
 
 
 
-@media only screen and (min-width: 401px) and (max-width: 767px) {
+@media only screen and (min-width: 375px) and (max-width: 767px) {
     .header-button {
         padding: 18px 24px;
     }
@@ -274,7 +275,7 @@
     }
 }
 
-@media (min-width: 768px) and (max-width: 1439px) {
+@media only screen and (min-width: 768px) and (max-width: 1439px) {
 
     /* Верстка для таблетов с размером экрана от 768px до 1439px */
     .header-button__mobile {
@@ -282,7 +283,7 @@
     }
 }
 
-@media (min-width: 1440px) {
+@media only screen and (min-width: 1440px) {
 
     /* Верстка для десктопов с размером экрана 1440px и более */
     .header-button__mobile {

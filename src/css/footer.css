@@ -16,11 +16,13 @@
   letter-spacing: -0.03em;
   text-transform: uppercase;
   color: #fafafa;
+  font-family: 'Inter Tight', sans-serif;
 
   margin-bottom: 63px;
   display: flex;
   flex-wrap: wrap;
 }
+
 .footer-logo {
   width: 44px;
   height: 44px;
@@ -59,6 +61,11 @@
   gap: 20px;
 }
 
+.footer-input:focus {
+  outline: none;
+  /* border: none; */
+}
+
 .footer-input::placeholder {
   font-weight: 500;
   font-size: 16px;
@@ -67,7 +74,10 @@
 
   color: rgba(250, 250, 250, 0.6);
 }
-
+.footer-input::placeholder:hover,
+.footer-input::placeholder:focus {
+  color: #fafafa;
+}
 .footer-btn-send {
   font-family: sans-serif;
   font-weight: 500;
@@ -83,6 +93,12 @@
   margin-top: 16px;
   margin-bottom: 64px;
 }
+
+.footer-btn-send:hover,
+.footer-btn-send:focus {
+  background-color: #e0373f;
+}
+
 .footer-contacts {
   display: flex;
   gap: 4px;
@@ -102,10 +118,16 @@
   gap: 10px;
 
   border: 1px solid rgba(250, 250, 250, 0.2);
+
   border-radius: 60px;
   padding: 10px 12px;
   max-width: 178px;
   height: 37px;
+}
+
+.footer-list-link:hover,
+.footer-list-link:focus {
+  border: 1px solid #fafafa;
 }
 
 .footer-link-contacts {
@@ -121,10 +143,7 @@
   align-items: center;
   display: flex;
   gap: 4px;
-  
 }
- 
-
 
 /* #endregion mobile*/
 
@@ -150,7 +169,7 @@
 
   .footer-form {
     flex-direction: row;
-    column-gap: 32px;
+    gap: 32px;
     display: flex;
     align-items: baseline;
   }
@@ -190,35 +209,51 @@
 
 /* #region desk*/
 @media screen and (min-width: 1440px) {
+  .footer {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    padding-left: 196px;
+  }
+
   .footer-item-form {
     margin-right: 68px;
     display: flex;
   }
 
-
-
-
-
-
-
-
-
-
-
-  
+  .footer-input {
+    width: 390px;
+    padding: 54px;
+  }
 }
 
 /* #endregion desk*/
 
 /* #region modal*/
 .footer-modal {
-  display: none;
+  /* display: none; */
 }
 .footer-modal {
 }
+
+
+.footer-icon-close {
+  stroke: #1c1d20;
+width: 22px;
+height: 22px;
+display: flex;
+justify-content: center;
+align-items: center;
+ 
+}
+
+
 .footer-close {
+padding: 0;
+
 }
 .footer-modal-text {
+  color: #3b3b3b;
 }
 .footer-modal-title {
 }
