@@ -196,7 +196,8 @@
         left: 0;
         bottom: 0;
         right: 0;
-        overflow-y: auto;
+        /* overflow-y: hidden;
+        -webkit-overflow-scrolling: touch; */
         background-image: url(/img/Header/header_modal_mob-min.png), url(/img/Header/header_modal_mob@2x-min.png);
         background-repeat: no-repeat;
         background-size: cover;
