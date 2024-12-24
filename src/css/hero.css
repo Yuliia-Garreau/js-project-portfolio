@@ -1,16 +1,23 @@
+:root {
+  --background-hero-mobile: url('../img/Others/Other_mob/Hero_mob.png');
+  --background-hero-mobile-2x: url('../img/Others/Other_mob/Hero@2x_mob.png');
+  --background-hero-tablet: url('../img/Others/Other_tab/Hero_tab.png');
+  --background-hero-tablet-2x: url('../img/Others/Other_tab/Hero@2x_tab.png');
+  --background-hero-desktop: url('../img/Others/Other_desk/Hero.png');
+  --background-hero-desktop-2x: url('../img/Others/Other_desk/Hero@2x.png');
+}
+
 /* ---Mobile--- */
 
 .hero {
-  width: 375px;
   background-image: var(--background-hero-mobile);
   background-size: cover;
   background-repeat: no-repeat;
-  transition: background-image 0.5s ease;
 }
 
 @media screen and (min-device-pixel-ratio: 2),
-  screen and (min-resolution: 192dpi),
-  screen and (min-resolution: 2dppx) {
+screen and (min-resolution: 192dpi),
+screen and (min-resolution: 2dppx) {
   .hero {
     background-image: var(--background-hero-mobile-2x);
   }
@@ -38,6 +45,8 @@
   justify-content: flex-end;
   gap: 4px;
 }
+
+.hero-networks-item {}
 
 .hero-networks-link {
   display: flex;
@@ -73,12 +82,11 @@
 
   .hero {
     background-image: var(--background-hero-tablet);
-    width: 768px;
   }
 
   @media screen and (min-device-pixel-ratio: 2),
-    screen and (min-resolution: 192dpi),
-    screen and (min-resolution: 2dppx) {
+  screen and (min-resolution: 192dpi),
+  screen and (min-resolution: 2dppx) {
     .hero {
       background-image: var(--background-hero-tablet-2x);
     }
@@ -106,15 +114,14 @@
 }
 
 /* Styles for Desktop devices */
-@media only screen and (min-width: 1440px) {
+@media only screen and (min-width: 1200px) {
   .hero {
     background-image: var(--background-hero-desktop);
-    width: 1440px;
   }
 
   @media screen and (min-device-pixel-ratio: 2),
-    screen and (min-resolution: 192dpi),
-    screen and (min-resolution: 2dppx) {
+  screen and (min-resolution: 192dpi),
+  screen and (min-resolution: 2dppx) {
     .hero {
       background-image: var(--background-hero-desktop-2x);
     }
@@ -131,75 +138,3 @@
     width: 55px;
   }
 }
-
-/* theme-switcher */
-#theme-switcher {
-  width: 80px;
-  position: relative;
-  top: -260px;
-  outline: none;
-  right: -20px;
-  border-radius: 30px;
-  padding-left: 4px;
-  background-color: transparent;
-  color: var(--text-white-color);
-}
-
-/* Стилі для елемента <option> */
-#theme-switcher option {
-  background-color: #353434da;
-  color: var(--text-white-color);
-  padding: 2px;
-  font-size: 14px;
-} /* Стилі для активного та вибраного стану */
-#theme-switcher option:checked {
-  background-color: #555;
-}
-
-/* кастомний список */
-/* .custom-select-container {
-  position: relative;
-  width: 200px;
-}
-
-.custom-select {
-  background-color: #33333300;
-  color: #fff;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  cursor: pointer;
-  user-select: none;
-  width: 80px;
-}
-
-.custom-select .selected {
-  display: block;
-}
-
-.custom-select .options-container {
-  display: none;
-  position: absolute;
-  background-color: transparent;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  width: 70px;
-
-  overflow-y: auto;
-  z-index: 1;
-}
-
-.custom-select .option {
-  padding: 10px;
-  color: #fff;
-  cursor: pointer;
-}
-
-.custom-select .option:hover,
-.custom-select .option:focus {
-  background-color: #666;
-}
-
-.custom-select.open .options-container {
-  display: block;
-} */
