@@ -10,7 +10,7 @@ import 'izitoast/dist/css/iziToast.min.css';
 const container = document.querySelector('.reviews-wrapper');
 const prevButton = document.querySelector('.reviews-swiper-button-prev');
 const nextButton = document.querySelector('.reviews-swiper-button-next');
-const swiperContainer = document.querySelector('.reviews-swiper');
+// const swiperContainer = document.querySelector('.swiper');
 const prevArrow = document.querySelector('.reviews-arrow-prev');
 const nextArrow = document.querySelector('.reviews-arrow-next');
 
@@ -25,14 +25,7 @@ async function fetchReviews() {
     const data = await response.json();
 
     renderReviews(data);
-
-    const slides = document.querySelectorAll('.reviews-item');
-
-    if (slides.length > 0) {
-      setTimeout(() => {
-        initializeSwiper();
-      }, 100);
-    }
+    console.log(data);
   } catch (error) {
     console.log(error.message);
     iziToast.error({
@@ -51,9 +44,9 @@ function renderReviews(reviews) {
   }
   container.innerHTML = '';
 
-  reviews.map(review => {
+  reviews.forEach(review => {
     const reviewHTML = `
-        <li class='reviews-item swiper-slide'>
+        <li class='reviews-item swiper-slide swiper-backface-hidden'>
         <img class='reviews-img'src='${review.avatar_url}' alt ='${review.author}' width='48px' height='48px'>
         <h3 class='reviews-name'>${review.author}</h3>
         <p class='reviews-text'>${review.review}</p>
@@ -61,6 +54,11 @@ function renderReviews(reviews) {
         `;
     container.insertAdjacentHTML('beforeend', reviewHTML);
   });
+  const slides = document.querySelectorAll('.swiper-slide');
+
+  setTimeout(() => {
+    initializeSwiper();
+  }, 0);
 }
 
 function initializeSwiper() {
@@ -69,9 +67,9 @@ function initializeSwiper() {
   //   return;
   // }
 
-  const swiper = new Swiper('.reviews-my-swiper', {
-    direction: 'horizontal',
-    loop: false,
+  const swiper = new Swiper('.swiper', {
+    // direction: 'horizontal',
+    // loop: false,
     modules: [Navigation],
     slidesPerView: 1,
     slidesPerGroup: 1,
@@ -123,18 +121,18 @@ function initializeSwiper() {
     },
   });
 
-  // nextButton.classList.add('active');
-  // nextArroe.classList.add('active-arr');
+  nextButton.classList.add('active');
+  nextArroe.classList.add('active-arr');
   prevButton.disabled = true;
 
-  nextButton.addEventListener('click', () => {
-    swiper.slideNext();
-  });
+  // nextButton.addEventListener('click', () => {
+  //   swiper.slideNext();
+  // });
 
-  prevButton.addEventListener('click', () => {
-    swiper.slidePrev();
-  });
-  // swiper.update();
+  // prevButton.addEventListener('click', () => {
+  //   swiper.slidePrev();
+  // });
+  swiper.update();
 }
 
 document.addEventListener('DOMContentLoaded', () => {
