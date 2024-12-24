@@ -69,7 +69,7 @@ function initializeSwiper() {
   //   return;
   // }
 
-  const swiper = new Swiper('.reviews-my-swiper', {
+  const swiper = new Swiper('.swiper', {
     direction: 'horizontal',
     loop: false,
     modules: [Navigation],

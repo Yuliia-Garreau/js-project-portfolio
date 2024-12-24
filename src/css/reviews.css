@@ -1,12 +1,13 @@
 @import url('./base.css');
 
 .reviews {
-  width: 376px;
+  width: 375px;
   height: 570px;
   padding: 64px 16px;
   background-color: var(--background-section-color);
   margin: 0 auto;
 }
+
 @media screen and (min-width: 768px) {
   .reviews {
     width: 768px;
@@ -147,11 +148,12 @@
   margin-top: 32px;
   margin-bottom: 0;
   overflow: hidden;
-  display: flex;
+  /* display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
-  flex-direction: row;
   gap: 12px;
+  flex-wrap: nowrap; */
 }
 
 @media screen and (min-width: 768px) {
