@@ -69,7 +69,11 @@
   width: 282px;
   height: 163px;
   flex-shrink: 0;
-  animation: marqueeLine 120s linear infinite;
+  animation: marqueeLine 120s linear infinite paused;
+}
+
+.covers-item.start {
+  animation-play-state: running;
 }
 
 .covers-img {
@@ -109,7 +113,7 @@
     screen and (min-resolution: 192dpi),
     screen and (min-resolution: 2dppx) {
     .covers-container {
-      background-image: url(../img/Cover/Cover_mob/background_mob_2x.png),
+      background-image: url(../img/Cover/Cover_tab/background_tab_2x-min.png),
         linear-gradient(
           to bottom,
           var(--background-section-color),
