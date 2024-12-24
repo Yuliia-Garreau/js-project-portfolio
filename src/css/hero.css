@@ -1,6 +1,7 @@
 /* ---Mobile--- */
 
 .hero {
+  width: 375px;
   background-image: var(--background-hero-mobile);
   background-size: cover;
   background-repeat: no-repeat;
@@ -75,6 +76,7 @@
 
   .hero {
     background-image: var(--background-hero-tablet);
+    width: 768px;
   }
 
   @media screen and (min-device-pixel-ratio: 2),
@@ -107,9 +109,10 @@
 }
 
 /* Styles for Desktop devices */
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1440px) {
   .hero {
     background-image: var(--background-hero-desktop);
+    width: 1440px;
   }
 
   @media screen and (min-device-pixel-ratio: 2),
@@ -144,6 +147,62 @@
   background-color: transparent;
   color: var(--text-white-color);
 }
+
+/* Стилі для елемента <option> */
 #theme-switcher option {
+  background-color: #353434da;
+  color: var(--text-white-color);
+  padding: 2px;
+  font-size: 14px;
+} /* Стилі для активного та вибраного стану */
+#theme-switcher option:checked {
+  background-color: #555;
+}
+
+/* кастомний список */
+.custom-select-container {
+  position: relative;
+  width: 200px;
+}
+
+.custom-select {
+  background-color: #33333300;
+  color: #fff;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  user-select: none;
+  width: 80px;
+}
+
+.custom-select .selected {
+  display: block;
+}
+
+.custom-select .options-container {
+  display: none;
+  position: absolute;
   background-color: transparent;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 70px;
+
+  overflow-y: auto;
+  z-index: 1;
+}
+
+.custom-select .option {
+  padding: 10px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.custom-select .option:hover,
+.custom-select .option:focus {
+  background-color: #666;
+}
+
+.custom-select.open .options-container {
+  display: block;
 }
