@@ -1,4 +1,4 @@
-import Swiper from 'swiper';
+import Swiper from 'swiper/bundle';
 import 'swiper/swiper-bundle.css';
 import { Navigation } from 'swiper/modules';
 import 'swiper/css';
@@ -46,7 +46,7 @@ function renderReviews(reviews) {
 
   reviews.forEach(review => {
     const reviewHTML = `
-        <li class='reviews-item swiper-slide is-visible'>
+        <li class='reviews-item swiper-slide swiper-backface-hidden'>
         <img class='reviews-img'src='${review.avatar_url}' alt ='${review.author}' width='48px' height='48px'>
         <h3 class='reviews-name'>${review.author}</h3>
         <p class='reviews-text'>${review.review}</p>
@@ -68,8 +68,8 @@ function initializeSwiper() {
   // }
 
   const swiper = new Swiper('.swiper', {
-    direction: 'horizontal',
-    loop: false,
+    // direction: 'horizontal',
+    // loop: false,
     modules: [Navigation],
     slidesPerView: 1,
     slidesPerGroup: 1,
