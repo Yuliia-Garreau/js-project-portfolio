@@ -1,7 +1,8 @@
 .header {
+    padding-top: 32px;
     display: flex;
     justify-content: space-between;
-    /* align-items: center; */
+    align-items: flex-start;
     background-color: transparent;
 }
 
@@ -15,9 +16,9 @@
     color: var(--text-white-color);
 }
 
-.header-menu {
+/* .header-menu {
     position: relative;
-}
+} */
 
 .header-menu__link {
     color: var(--text-white-color);
