@@ -10,6 +10,10 @@
   --background-section-color: #1c1d20;
   --background-element-color: #242527;
 
+  --text-white-color-hover: #ffffff;
+  --pink-color-hover: #e0373f;
+  --pink-color-focus: #e0373f;
+
 
 }
 
@@ -25,8 +29,6 @@
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
-
-
 
 
 
