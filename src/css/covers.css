@@ -1,6 +1,6 @@
 /* Styles for Mobile devices */
 .covers.container {
-  padding: 32px 0;
+  padding: 0 0 64px;
   background-color: var(--background-section-color);
 }
 
@@ -96,7 +96,7 @@
 /* Styles for Tablet devices */
 @media screen and (min-width: 768px) {
   .covers.container {
-    padding: 48px 0;
+    padding: 0 0 96px;
   }
 
   .covers-container {
@@ -159,7 +159,7 @@
 /* Styles for Desktop devices */
 @media screen and (min-width: 1440px) {
   .covers.container {
-    padding: 82px 0;
+    padding: 0 0 164px;
   }
 
   .covers-container {
