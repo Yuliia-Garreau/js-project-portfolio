@@ -10,27 +10,10 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 
 
-// const nextBtn = document.querySelector(".swiper-button-next");
-// const prevBtn = document.querySelector(".swiper-button-prev");
 const next = document.querySelector(".next-slide");
 const prev = document.querySelector(".prev-slide");
 const arrowNext = document.querySelector(".arrow-narrow-next");
 const arrowPrev = document.querySelector(".arrow-narrow-prev");
-
-
-//     // // spaceBetween: 10,
-//     // keyboard: {
-//     //     enabled: true,
-//     //     onlyInViewport: true,
-//     //   },
-//     // //   breakpoints: {
-//     // //     1440: {
-//     // //       slidesPerView: 1,
-//     // //     //   spaceBetween: 32,
-//     // //     },
-//     // //   },
-//     //   
-// });
 
 const swiper = new Swiper('.mySwiper', {
   // Parameters
@@ -41,10 +24,27 @@ const swiper = new Swiper('.mySwiper', {
   // Navigation arrows
   navigation: {
     nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
+    prevEl: '.wiper-button-prev',
   },
   slidesPerView: 1,
-  spaceBetween: 32,
+  spaceBetween: 16,
+  keyboard: {
+    enabled: true,
+    onlyInViewport: true,
+  },
+  breakpoints: {
+    // 375: {
+    //     spaceBetween: 375,
+    //    allowTouchMove: true,
+    //  },
+    768: {
+       spaceBetween: 768,
+      allowTouchMove: true,
+    },
+    1440: {
+            spaceBetween: 1440,
+    },
+  },
   on: {
             reachEnd() {
               next.disabled = true;
