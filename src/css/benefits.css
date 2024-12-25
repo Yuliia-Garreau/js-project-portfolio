@@ -1,22 +1,7 @@
-
 @import url('./base.css');
-
-.benefits-container {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: var(--background-section-color);
-  color: #fafafa;
-=======
-.benefits-container {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #121212;
-  color: white;
-}
 
 .benefits-wrap {
   background-color: #1c1d20;
-
   max-width: 375px;
   /* min-width: 320px; */
   margin-left: auto;
