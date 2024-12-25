@@ -13,16 +13,8 @@
   --text-white-color-hover: #ffffff;
   --pink-color-hover: #e0373f;
   --pink-color-focus: #e0373f;
-}
 
-html {
-  scroll-behavior: smooth;
-}
 
-main {
-  max-width: 1440px;
-  margin: 0 auto;
-  background-color: var(--background-section-color);
 }
 
 .visually-hidden {
@@ -37,3 +29,8 @@ main {
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
+
+
+
+
+
