@@ -120,6 +120,10 @@
     /* Убираем внутренние отступы */
 }
 
+.swiper-pagination {
+    display: none;
+}
+
 /* bottoms */
 
 .reviews-swiper-btns {
