@@ -99,7 +99,7 @@
 .swiper-slide {
     display: flex;
     justify-content: center;
-    align-items: center;
+    /* align-items: center; */
     width: 332px;
     /* Устанавливаем фиксированную ширину слайда */
     height: auto;
@@ -178,4 +178,9 @@
 .reviews-swiper-button-next.disabled .reviews-arrow-next {
     stroke: #3B3B3B;
     color: #3B3B3B;
+}
+
+.hidden-slide {
+    visibility: hidden;
+    position: absolute;
 }
