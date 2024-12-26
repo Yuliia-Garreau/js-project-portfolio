@@ -20,26 +20,6 @@
 //      введені значення (не очищувати форму) для їх
 //      подальшої повторної відправки.
 
-// const inputs = document.querySelectorAll('.footer-input');
-
-// const formMaxLength = 30;
-
-
-// inputs.forEach(input => {
-//     const pattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-
-//   input.addEventListener('input', e => {
-//     if (!pattern.test(input.value)) {
-//       input.style.borderBottom = '1px solid #fafafa';
-//     } else {
-//       input.style.borderBottom = '1px solid #3b3b3b';
-//     }
-
-//     if (input.value.length > formMaxLength) {
-//       input.value = input.value.slice(0, formMaxLength - 3) + '...';
-//     }
-//   });
-// });
 
 
 
