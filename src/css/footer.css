@@ -37,8 +37,9 @@
 }
 
 .footer-input {
+  width: 100%;
   font-family: 'Inter Tight', sans-serif;
-  width: 343px;
+  /* width: 343px; */
   height: 44px;
   background-color: transparent;
 
@@ -77,8 +78,10 @@
 }
 
 .footer-input::placeholder:hover,
+.footer-input::placeholder:active,
 .footer-input::placeholder:focus {
   color: #fafafa;
+  border-color: #fafafa;
 }
 .footer-btn-send {
   font-family: sans-serif;
@@ -226,7 +229,7 @@
 
   .footer-input {
     width: 390px;
-    padding: 54px;
+    
   }
 }
 
