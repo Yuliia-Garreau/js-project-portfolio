@@ -1,39 +1,25 @@
 .reviews-title {
     color: rgba(250, 250, 250, 0.40);
-
     font-family: "Inter Tight";
     font-size: 16px;
     font-style: normal;
     font-weight: 600;
     line-height: 1.5;
-    /* 150% */
     letter-spacing: -0.32px;
-
     margin-bottom: 32px;
 }
 
 .reviews-list {
     display: flex;
-    flex-wrap: nowrap;
-    /* Убираем перенос */
-    gap: 0;
-    /* Убираем gap */
-    margin: 0;
-    /* Убираем внешние отступы */
-    padding: 0;
-    /* Убираем внутренние отступы */
 }
 
 .review-item {
-    display: flex;
-    flex-direction: column;
     padding: 32px 24px;
     margin-bottom: 10px;
     border-radius: 20px;
     border: 1px solid rgba(250, 250, 250, 0.20);
     width: 332px;
-    height: 302px;
-
+    height: 302px !important;
 }
 
 .review-author {
@@ -51,80 +37,63 @@
 
 .review-author-name {
     color: var(--text-white-color);
-
-    /* Desktop_tablet/H5 */
     font-family: "Inter Tight";
     font-size: 20px;
     font-style: normal;
     font-weight: 600;
     line-height: 30px;
-    /* 150% */
     letter-spacing: -0.4px;
 }
 
 .review-text {
     color: rgba(250, 250, 250, 0.60);
-
-    /* Desktop_tablet/Main text */
     font-family: "Inter Tight";
     font-size: 16px;
     font-style: normal;
     font-weight: 500;
     line-height: 1.5;
-    /* 150% */
     letter-spacing: -0.32px;
-
     overflow: hidden;
-    /* Скрываем лишний текст */
     text-overflow: ellipsis;
-    /* Добавляем многоточие для обрезанного текста */
     display: -webkit-box;
-    /* Необходимый стиль для использования webkit */
-    -webkit-line-clamp: 6;
-    /* Ограничиваем количество линий */
+    -webkit-line-clamp: 5;
     -webkit-box-orient: vertical;
 }
 
-/* Стили для Swiper */
-.swiper-container {
-    width: 100%;
-    height: 100%;
+/* Swiper */
+
+.swiper {
+    display: flex;
+    margin: 0;
 }
 
 .swiper-wrapper {
-    display: flex;
-    flex-direction: row;
+    box-sizing: content-box;
 }
 
 .swiper-slide {
     display: flex;
-    justify-content: center;
-    /* align-items: center; */
-    width: 332px;
-    /* Устанавливаем фиксированную ширину слайда */
-    height: auto;
-    margin-right: 16px;
-    /* Добавляем отступ между слайдами */
+
+
 }
 
-/* Убираем отступы и выравниваем контейнер */
+/* .swiper-slide img   {
+  
+} */
+
 .reviews-list {
     display: flex;
     flex-wrap: nowrap;
-    /* Убираем перенос */
     gap: 0;
-    /* Убираем gap */
     margin: 0;
-    /* Убираем внешние отступы */
     padding: 0;
-    /* Убираем внутренние отступы */
 }
 
 .swiper-pagination {
     display: none;
 }
 
-/* bottoms */
+/* reviews-swiper-btns */
 
 .reviews-swiper-btns {
     display: flex;
@@ -144,7 +113,6 @@
     height: 52px;
     background-color: transparent;
     transition: border-color 0.3s ease, stroke 0.3s ease, color 0.3s ease;
-    /* Добавляем плавный переход */
 }
 
 .reviews-arrow-prev,
@@ -159,7 +127,6 @@
     width: 24px;
     height: 24px;
     transition: stroke 0.3s ease, color 0.3s ease;
-    /* Добавляем плавный переход */
 }
 
 .reviews-swiper-button-prev.active,
@@ -182,9 +149,4 @@
 .reviews-swiper-button-next.disabled .reviews-arrow-next {
     stroke: #3B3B3B;
     color: #3B3B3B;
-}
-
-.hidden-slide {
-    visibility: hidden;
-    position: absolute;
 }
