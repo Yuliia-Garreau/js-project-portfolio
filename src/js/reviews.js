@@ -50,7 +50,7 @@ function renderReviews(reviews) {
 
 function initializeSwiper() {
   const swiper = new Swiper('.swiper-container', {
-    modules: [Navigation, Pagination, Keyboard],
+    // modules: [Navigation, Pagination, Keyboard],
     speed: 500,
     loop: false, // Отключаем бесконечный цикл
     slidesPerView: 1, // По умолчанию показывать 1 слайд
