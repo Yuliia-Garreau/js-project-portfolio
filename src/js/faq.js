@@ -33,3 +33,4 @@ faqItems.forEach((item) => {
         }
     }); 
 });
+
