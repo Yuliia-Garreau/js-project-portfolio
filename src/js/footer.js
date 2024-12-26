@@ -20,3 +20,36 @@
 //      введені значення (не очищувати форму) для їх 
 //      подальшої повторної відправки.
 
+
+
+const input =document.querySelectorAll('.footer-form')
+
+
+
+
+
+const formMaxLength = 30;
+
+
+
+input.forEach(input => {
+    const pattern="^\w+(\.\w+)?@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$";
+    input.addEventListener('input', (e) => {
+      if(pattern.test > formMaxLength){
+return input.value = input.value.slice(0, formMaxLength) + '...'
+    }  
+    }
+    
+    )
+})
+
+
+
+
+
+
+
+
+
+
+
