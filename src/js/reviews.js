@@ -1,8 +1,9 @@
 import Swiper from 'swiper/bundle';
 import 'swiper/swiper-bundle.css'; // Импортируем все стили Swiper
-import { Navigation, Pagination } from 'swiper/modules';
+import { Navigation, Pagination, Keyboard } from 'swiper/modules';
 import 'swiper/css/navigation'; // Импортируем стили для модуля Navigation
 import 'swiper/css/pagination'; // Импортируем стили для модуля Pagination
+import 'swiper/css/keyboard';
 
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
@@ -49,9 +50,10 @@ function renderReviews(reviews) {
 
 function initializeSwiper() {
   const swiper = new Swiper('.swiper-container', {
-    modules: [Navigation, Pagination],
+    modules: [Navigation, Pagination, Keyboard],
+    speed: 500,
     loop: false, // Отключаем бесконечный цикл
-    slidesPerView: 4, // По умолчанию показывать 4 слайда
+    slidesPerView: 1, // По умолчанию показывать 1 слайд
     slidesPerGroup: 1, // Переключаем по одному слайду
     spaceBetween: 16, // Расстояние между слайдами
     navigation: {
@@ -62,6 +64,11 @@ function initializeSwiper() {
       el: '.swiper-pagination',
       clickable: true,
     },
+    keyboard: {
+      enabled: true,
+      onlyInViewport: true,
+    },
+
     breakpoints: {
       // when window width is >= 1440px
       1440: {
