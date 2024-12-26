@@ -68,6 +68,7 @@ screen and (min-resolution: 2dppx) {
   width: 178px;
   margin: 0;
 }
+
 .hero-networks-link:hover,
 .hero-networks-link:focus {
   border: 1px solid var(--text-white-color);
@@ -114,7 +115,7 @@ screen and (min-resolution: 2dppx) {
 }
 
 /* Styles for Desktop devices */
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1440px) {
   .hero {
     background-image: var(--background-hero-desktop);
   }
