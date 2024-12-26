@@ -60,6 +60,10 @@
     height: 40px;
 }
 
+.faq-item.ac .ac-trigger:hover {
+    border-color: #fafafa;
+}
+
 .faq-item.ac .faq-accordion-btn.ac-trigger::after {
     display: none;
 }
