@@ -37,6 +37,7 @@ img {
   height: auto;
 }
 
+html,
 body {
-  background-color: var(--background-section-color);
+  overflow-x: hidden;
 }
