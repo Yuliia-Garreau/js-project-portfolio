@@ -1,7 +1,5 @@
 /* #region mobile*/
 
-
-
 .footer-con-title {
   padding-top: 32px;
   max-width: 267px;
@@ -37,8 +35,9 @@
 }
 
 .footer-input {
+  width: 100%;
   font-family: 'Inter Tight', sans-serif;
-  width: 343px;
+  /* width: 343px; */
   height: 44px;
   background-color: transparent;
 
@@ -77,8 +76,10 @@
 }
 
 .footer-input::placeholder:hover,
+.footer-input::placeholder:active,
 .footer-input::placeholder:focus {
   color: #fafafa;
+  border-color: #fafafa;
 }
 .footer-btn-send {
   font-family: sans-serif;
@@ -216,7 +217,6 @@
     display: flex;
     align-items: flex-start;
     flex-direction: column;
-    padding-left: 196px;
   }
 
   .footer-item-form {
@@ -226,7 +226,6 @@
 
   .footer-input {
     width: 390px;
-    padding: 54px;
   }
 }
 
