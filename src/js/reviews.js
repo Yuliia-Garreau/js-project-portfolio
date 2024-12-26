@@ -32,7 +32,7 @@ function renderReviews(reviews) {
   const reviewsHtml = reviews
     .map(
       review => `
-        <div class="swiper-slide">
+        <div class="swiper-slide review-slide">
           <li class="review-item" id="${review._id}">
             <div class="review-author">
               <img src="${review.avatar_url}" alt="Avatar of ${review.author}" class="review-avatar"/>
@@ -52,6 +52,7 @@ function initializeSwiper() {
     modules: [Navigation, Pagination],
     loop: false, // Отключаем бесконечный цикл
     slidesPerView: 4, // По умолчанию показывать 4 слайда
+    slidesPerGroup: 1, // Переключаем по одному слайду
     spaceBetween: 16, // Расстояние между слайдами
     navigation: {
       nextEl: '.reviews-swiper-button-next',
@@ -65,28 +66,52 @@ function initializeSwiper() {
       // when window width is >= 1440px
       1440: {
         slidesPerView: 4,
+        slidesPerGroup: 1, // Переключаем по одному слайду
         spaceBetween: 16,
       },
       // when window width is >= 768px
       768: {
         slidesPerView: 2,
+        slidesPerGroup: 1, // Переключаем по одному слайду
         spaceBetween: 16,
       },
       // when window width is >= 375px
       375: {
         slidesPerView: 1,
+        slidesPerGroup: 1, // Переключаем по одному слайду
         spaceBetween: 16,
       },
     },
     on: {
       slideChange: function () {
         updateNavigationButtons(swiper);
+        updateSlideVisibility(swiper);
+      },
+      resize: function () {
+        updateSlideVisibility(swiper);
       },
     },
   });
 
-  // Обновляем состояние кнопок навигации при инициализации
+  // Обновляем состояние кнопок навигации и видимость слайдов при инициализации
   updateNavigationButtons(swiper);
+  updateSlideVisibility(swiper);
+}
+
+function updateSlideVisibility(swiper) {
+  const slides = swiper.slides;
+  const activeIndex = swiper.activeIndex;
+  const slidesPerView = swiper.params.slidesPerView;
+
+  slides.forEach((slide, index) => {
+    if (index >= activeIndex && index < activeIndex + slidesPerView) {
+      // Отображаем слайды, которые входят в текущий slidesPerView
+      slide.classList.remove('hidden-slide');
+    } else {
+      // Скрываем слайды, которые выходят за рамки текущего slidesPerView
+      slide.classList.add('hidden-slide');
+    }
+  });
 }
 
 function updateNavigationButtons(swiper) {
