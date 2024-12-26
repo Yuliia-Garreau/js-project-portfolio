@@ -20,22 +20,26 @@
 //      введені значення (не очищувати форму) для їх
 //      подальшої повторної відправки.
 
-
-
-
 const inputs = document.querySelectorAll('.footer-input');
 
 inputs.forEach(input => {
-    input.addEventListener('input', () => {
-const widthInput = Math.floor(input.offsetWidth / 9)
-const inpText = input.value;
+  input.addEventListener('input', () => {
+    const widthInput = Math.floor(input.offsetWidth / 9);
+    const inpText = input.value;
 
-if (inpText.length > widthInput) {
-    input.value = inpText.slice(0, widthInput - 3) + '...'
-}
+    if (inpText.length > widthInput) {
+      input.value = inpText.slice(0, widthInput - 3) + '...';
+    }
 
-input.title = inpText;
-// 
-})
-}) 
+    input.title = inpText;
+    //
+  });
+});
+
+const btn = document.querySelector('.footer-btn-send')
+console.log(btn);
+
+
+
+
 
