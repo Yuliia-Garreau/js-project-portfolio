@@ -40,4 +40,5 @@ img {
 html,
 body {
   overflow-x: hidden;
+  background-color: var(--background-section-color);
 }

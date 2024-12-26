@@ -21,11 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Append header to hero
-  const header = document.querySelector('.header');
-  const hero = document.querySelector('.hero');
-  hero.insertBefore(header, hero.firstChild);
-
   // Toggle mobile menu
   headerBurger.addEventListener('click', () => {
     headerBurger.classList.toggle('active');
