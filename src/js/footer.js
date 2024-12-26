@@ -1,26 +1,11 @@
-// Секція також містить форму, що включає обовʼязкові
-// до заповнення елементи <input> та кнопку
-//  “Send" типу submit. Полю для введення
-//   електронної пошти слід додати мінімальну
-//   валідацію введених даних  за допомогою
-//    атрибуту pattern="^\w+(\.\w+)?@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$".
-//     У випадку, коли вміст введеного тексту
-//     перевищує розмір поля input, відображується
-//     тільки обмежена кількість символів, а р
-//     ешта тексту позначається трьома крапками (...),
-//     що показує, що текст був обрізаний.
-// По clickу на кнопку "Send" необхідно відправити
-//  POST запит на сервер про створення заявки щодо
-//  співпраці та у разі успішного створення - повідомити
-//   про це користувача, відкривши відповідне модальне
-//    вікно, в цьому випадку слід також очистити форму.
-//    Якщо з сервера буде повернута помилка - користувачеві
-//    слід повідомити про це за допомогою вспливаючого
-//     повідомлення і надати можливість відкорегувати
-//      введені значення (не очищувати форму) для їх
-//      подальшої повторної відправки.
-
 const inputs = document.querySelectorAll('.footer-input');
+const form = document.querySelector('.footer-form');
+const btn = document.querySelector('.footer-btn-send');
+const modal = document.querySelector('.footer-modal');
+const btnClose = document.querySelector('.footer-close');
+const backdrop = document.querySelector('.footer-back-modal');
+const emailInput = form.querySelector('input[type="email"]');
+const commentInput = form.querySelector('input[type="text"]');
 
 inputs.forEach(input => {
   input.addEventListener('input', () => {
@@ -32,14 +17,62 @@ inputs.forEach(input => {
     }
 
     input.title = inpText;
-    //
   });
 });
 
-const btn = document.querySelector('.footer-btn-send')
-console.log(btn);
+btnClose.addEventListener('click', modalClose);
 
+function modalOpen() {
+  backdrop.style.display = 'block';
+  backdrop.classList.add('is-open');
+}
 
+function modalClose() {
+  backdrop.style.display = 'none';
+  backdrop.classList.remove('is-open');
+}
 
+backdrop.addEventListener('click', (e) => {
+  if (e.target === backdrop) {
+    modalClose();
+  }
+});
 
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
 
+  const email = emailInput.value.trim();
+  const comment = commentInput.value.trim();
+
+  const data = {
+    email,
+    comment,
+  };
+
+  try {
+    const response = await fetch(
+      'https://portfolio-js.b.goit.study/api-docs/#/',
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      }
+    );
+
+    if (!response.ok) {
+      const errorData = await response.json();
+      throw new Error(errorData.message || 'Unknown error occurred');
+    }
+
+    modalOpen();
+    form.reset();
+  } catch (error) {
+    showError(error.message);
+  }
+});
+
+function showError(message) {
+  console.error(message);
+}
