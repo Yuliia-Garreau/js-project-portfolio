@@ -35,6 +35,7 @@ if (inpText.length > widthInput) {
 }
 
 input.title = inpText;
+// 
 })
 }) 
 
