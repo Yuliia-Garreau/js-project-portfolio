@@ -34,8 +34,7 @@ if (inpText.length > widthInput) {
     input.value = inpText.slice(0, widthInput - 3) + '...'
 }
 
-
+input.title = inpText;
 })
 }) 
-
 
