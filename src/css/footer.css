@@ -158,7 +158,7 @@
   }
 
   .footer-title {
-    padding-top: 88px;
+   
     font-size: 64px;
     margin-bottom: 0;
   }
@@ -213,6 +213,11 @@
 
 /* #region desk*/
 @media screen and (min-width: 1440px) {
+
+  .footer-con-title {
+    padding-top: 88px;
+  }
+
   .footer {
     display: flex;
     align-items: flex-start;
