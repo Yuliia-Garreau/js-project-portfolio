@@ -32,6 +32,7 @@ const swiper = new Swiper('.mySwiper', {
     enabled: true,
     onlyInViewport: true,
   },
+//   breakpointsBase: "container",
   breakpoints: {
     // 375: {
     //     spaceBetween: 375,
@@ -43,8 +44,10 @@ const swiper = new Swiper('.mySwiper', {
     },
     1440: {
             spaceBetween: 1440,
+            allowTouchMove: true,
     },
   },
+  centeredSlides: true,
   on: {
             reachEnd() {
               next.disabled = true;

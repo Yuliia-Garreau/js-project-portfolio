@@ -31,12 +31,10 @@
     height: 812px;
     margin-left: auto;
     margin-right: auto;
-    /* padding-left: 32px; */
 }
 
 .white-div {
     margin: 0;
-    /* background-color: blue; */
     height: 50%;
     padding-top: 32px;
     padding-left: 32px;
@@ -49,10 +47,10 @@
     align-items: flex-start;
     justify-content: flex-start;
     flex-direction: row;
-    /* margin-top: 32px; */
     margin-bottom: 96px;
     gap: 6px;
     max-width: 279px;
+    padding-right: 10px;
 
 }
 
@@ -73,13 +71,14 @@
     letter-spacing: -0.03em;
     color: #1c1d20;
     max-width: 279px;
-    /* margin-bottom: 32px; */
+    padding-right: 10px;
 }
 
 .see-project-btn {
     border-radius: 60px;
     padding: 13px 32px;
     height: 45px;
+    width: 177px;
     background: var(--pink-color);
     font-family: "Inter Tight", sans-serif;
     font-weight: 500;
@@ -88,7 +87,6 @@
     color: #fafafa;
     border: none;
     cursor: pointer;
-    /* margin-bottom: 32px; */
     margin-top: 5%;
 }
 
@@ -103,18 +101,12 @@
 }
 .black-div {
     border-radius: 0 0 24px 24px;
-    /* width: 343px; */
     height: 50%;
-    /* height: 395px; */
     background-color: var(--background-element-color);
-    /* background-color: red; */
-    /* margin-top: auto; */
-    /* margin-left: -354px; */
     padding-top: 100px;
     padding-bottom: 100px;
     padding-left: 16px;
     padding-right: 16px;
-    /* margin-top: 25px; */
   
 }
 .project-image {
@@ -129,13 +121,14 @@
     display: none;
 }
 
+
 .mySwiper {
     max-width: 375px;
-    min-width: none;
     height: 812px;
     padding-left: 16px;
     padding-right: 16px;
     border-radius: 0 0 24px 24px;
+    overflow: hidden;
 }
 
 .slide-btns {
@@ -154,7 +147,9 @@
     height: 52px;
     background-color: transparent;
 }
-
+.swiper-wrapper {
+    /* overflow: hidden; */
+}
 .arrow-narrow-prev {
     fill: none;
     stroke: #3B3B3B;
@@ -196,7 +191,6 @@
 .active-arrow {
     stroke: var(--text-white-color);
     fill: none;
-    /* color: #3B3B3B; */
     display: block;
     overflow: visible !important;
     visibility: visible;
@@ -212,12 +206,10 @@
     }
 .section-title {
     padding-left: 32px;
-    /* margin-bottom: 30px; */
 }
     .projects-item {
         max-width: 704px;
         height: 1191px;
-        /* padding-left: 64px; */
     }
 .white-div {
     padding-left: 64px;
@@ -225,10 +217,8 @@
     height: 50%;
 }
     .stack-list {
-        /* margin-top: 64px; */
         margin-bottom: 194px;
         max-width: 494px;
-        /* padding-top: 64px; */
     }
 
     .stack-item {
@@ -250,12 +240,10 @@
     .black-div {
         max-width: 768px;
         height: 625px;
-        /* margin-top: 567px; */
         padding-top: 120px;
         padding-bottom: 120px;
         padding-left: 45px;
         padding-right: 45px;
-        /* margin-left: -558px; */
     }
 
     .mySwiper {
@@ -266,14 +254,6 @@
         border-radius: 0 0 24px 24px;
         transform: translate3d(0px, 0px, 0px);
     }
-
-    /* .mySwiper {
-        max-width: 375px;
-        min-width: none;
-        height: 812px;
-        padding-left: 16px;
-        padding-right: 16px;
-        border-radius: 0 0 24px 24px; */
 
     .slide-btns {
         margin-top: 64px;
@@ -314,6 +294,7 @@
         height: 625px;
         display: flex;
         flex-direction: row;
+        align-items: flex-start;
 
     }
     .white-div {
@@ -330,16 +311,13 @@
 
     .black-div {
         border-radius: 0 24px 24px 0;
-        /* width: 688px; */
-        /* margin-left: auto; */
         padding-left: 37px;
         padding-right: 37px;
-        /* margin-top: 0; */
         width: 50%;
     }
 
     .mySwiper {
-        max-width: 1376px;
+        max-width: 1440px;
         height: 625px;
         border-radius: 0 24px 24px 0;
     }
