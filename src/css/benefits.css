@@ -98,8 +98,7 @@
   padding: 12px;
 }
 
-.benefits-button-b {
-}
+
 
 .benefits-button {
   display: flex;
@@ -112,7 +111,18 @@
   padding-bottom: 18px;
   width: 187px;
   height: 55px;
+
+  transition: border 0.3s ease-in-out, color 0.3s ease-in-out;
 }
+
+/* .benefits-button:hover */
+.benefits-button:hover,
+.benefits-button:focus {
+  border: 1px solid var(--text-white-color);
+  color: var(--text-gray-color);
+}
+
+
 
 @media screen and (min-width: 768px) {
   .benefits {
@@ -138,8 +148,7 @@
     margin-bottom: 0px;
   }
 
-  .benefits-button-b {
-  }
+  .benefits-button-b {}
 }
 
 @media screen and (min-width: 1440px) {
