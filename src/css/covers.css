@@ -2,6 +2,7 @@
 .covers.container {
   padding: 0 0 64px;
   background-color: var(--background-section-color);
+  cursor: pointer;
 }
 
 .covers-container {
