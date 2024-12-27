@@ -1,12 +1,4 @@
-
-
 /* #region mobile*/
-
-.footer {
- 
-  background-color: #1c1d20;
-}
-
 
 .footer-con-title {
   padding-top: 32px;
@@ -28,7 +20,6 @@
   flex-wrap: wrap;
 }
 
-
 .footer-logo {
   width: 44px;
   height: 44px;
@@ -44,8 +35,9 @@
 }
 
 .footer-input {
+  width: 100%;
   font-family: 'Inter Tight', sans-serif;
-  width: 343px;
+  /* width: 343px; */
   height: 44px;
   background-color: transparent;
 
@@ -65,11 +57,13 @@
   justify-content: flex-start;
   flex-direction: column;
   gap: 20px;
+
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .footer-input:focus {
   outline: none;
-
 }
 
 .footer-input::placeholder {
@@ -82,8 +76,10 @@
 }
 
 .footer-input::placeholder:hover,
+.footer-input::placeholder:active,
 .footer-input::placeholder:focus {
   color: #fafafa;
+  border-color: #fafafa;
 }
 .footer-btn-send {
   font-family: sans-serif;
@@ -106,9 +102,6 @@
   background-color: #e0373f;
 }
 
-
-
-
 .footer-contacts {
   display: flex;
   gap: 4px;
@@ -129,7 +122,6 @@
 
   border: 1px solid rgba(250, 250, 250, 0.2);
 
-
   border-radius: 60px;
   padding: 10px 12px;
   max-width: 178px;
@@ -140,8 +132,6 @@
 .footer-list-link:focus {
   border: 1px solid #fafafa;
 }
-
-
 
 .footer-link-contacts {
   font-family: sans-serif;
@@ -168,7 +158,7 @@
   }
 
   .footer-title {
-    padding-top: 88px;
+   
     font-size: 64px;
     margin-bottom: 0;
   }
@@ -182,8 +172,8 @@
 
   .footer-form {
     flex-direction: row;
-    gap: 32px;
-    gap: 32px;
+    gap: 26px;
+
     display: flex;
     align-items: baseline;
   }
@@ -223,14 +213,16 @@
 
 /* #region desk*/
 @media screen and (min-width: 1440px) {
+
+  .footer-con-title {
+    padding-top: 88px;
+  }
+
   .footer {
     display: flex;
     align-items: flex-start;
     flex-direction: column;
-    padding-left: 196px;
   }
-
- 
 
   .footer-item-form {
     margin-right: 68px;
@@ -239,17 +231,13 @@
 
   .footer-input {
     width: 390px;
-    padding: 54px;
   }
-
 }
 
 /* #endregion desk*/
 
 /* #region modal*/
 .footer-modal {
- 
-
   width: 343px;
   min-height: 276px;
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12),
@@ -337,10 +325,6 @@
     width: 492px;
     height: 246px;
   }
-
- 
-
- 
 }
 
 /* #endregion modal*/
