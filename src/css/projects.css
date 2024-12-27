@@ -35,10 +35,10 @@
 
 .white-div {
     margin: 0;
-    height: 50%;
     padding-top: 32px;
     padding-left: 32px;
     border-radius: 24px 24px 0 0 ;
+    padding-bottom: 32px;
 }
 
 .stack-list {
@@ -72,6 +72,7 @@
     color: #1c1d20;
     max-width: 279px;
     padding-right: 10px;
+    margin-bottom: 32px;
 }
 
 .see-project-btn {
@@ -87,7 +88,7 @@
     color: #fafafa;
     border: none;
     cursor: pointer;
-    margin-top: 5%;
+    margin-bottom: 0;
 }
 
 .see-project-btn:hover {
@@ -147,9 +148,7 @@
     height: 52px;
     background-color: transparent;
 }
-.swiper-wrapper {
-    /* overflow: hidden; */
-}
+
 .arrow-narrow-prev {
     fill: none;
     stroke: #3B3B3B;
@@ -214,7 +213,7 @@
 .white-div {
     padding-left: 64px;
     padding-top: 64px;
-    height: 50%;
+    padding-bottom: 32px;
 }
     .stack-list {
         margin-bottom: 194px;
@@ -228,13 +227,12 @@
     .text {
         font-size: 44px;
         line-height: 1;
-        max-width: 494px;
+        max-width: 494px;    
     }
 
     .see-project-btn {
         padding: 18px 50px;
         height: 55px;
-        margin-bottom: 32px;
     }
 
     .black-div {
