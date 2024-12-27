@@ -2,7 +2,10 @@ import Accordion from 'accordion-js';
 import 'accordion-js/dist/accordion.min.css';
 
 import Swiper from 'swiper';
-import 'swiper/swiper-bundle.css';
+import { Navigation, Keyboard } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/keyboard';
 
 
 const accordionItems = document.querySelectorAll('.accordion-item');
@@ -56,7 +59,6 @@ if (firstItem) {
 /* ========================================================================================================================================================
 Swiper
 ======================================================================================================================================================== */
-
 
 document.addEventListener("DOMContentLoaded", () => {
     const skills = document.querySelectorAll(".skill");
@@ -114,7 +116,5 @@ document.addEventListener("DOMContentLoaded", () => {
 
     updateActiveSkill();
 });
-
-
 
 
