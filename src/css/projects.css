@@ -78,6 +78,7 @@
     border-radius: 60px;
     padding: 13px 32px;
     height: 45px;
+    width: 177px;
     background: var(--pink-color);
     font-family: "Inter Tight", sans-serif;
     font-weight: 500;
@@ -120,13 +121,14 @@
     display: none;
 }
 
+
 .mySwiper {
     max-width: 375px;
-    min-width: none;
     height: 812px;
     padding-left: 16px;
     padding-right: 16px;
     border-radius: 0 0 24px 24px;
+    overflow: hidden;
 }
 
 .slide-btns {
@@ -145,7 +147,9 @@
     height: 52px;
     background-color: transparent;
 }
-
+.swiper-wrapper {
+    /* overflow: hidden; */
+}
 .arrow-narrow-prev {
     fill: none;
     stroke: #3B3B3B;
