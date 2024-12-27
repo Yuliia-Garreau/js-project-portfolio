@@ -3,7 +3,7 @@
     background-color: var(--background-section-color);
     padding-bottom: 64px;
     /* margin: 0; */
-    width: 375px;
+    /* width: 375px; */
 }
 
 .faq-header {
@@ -60,6 +60,10 @@
     height: 40px;
 }
 
+.faq-item.ac .ac-trigger:hover {
+    border-color: #fafafa;
+}
+
 .faq-item.ac .faq-accordion-btn.ac-trigger::after {
     display: none;
 }
@@ -73,7 +77,13 @@
 
     padding: 0;
     margin-bottom: 20px;
-} 
+}
+
+@media screen and (min-width: 375px) and (max-width: 767px) {
+    .faq {
+        max-width: 375px;
+    }
+}
 
 @media screen and (min-width: 768px) {
     .faq {
@@ -126,7 +136,7 @@
     .faq-item:nth-child(2n+1) .item-cont {
         padding-right: 32px;
         /* padding-left: 0; */
-    } 
+    }
 
     /* .faq-item:nth-child(2n) .faq-accordion-text {
         padding-left: 32px;
