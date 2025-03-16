@@ -1,11 +1,11 @@
 {
-  "name": "s-project-portfolio",
+  "name": "js-project-portfolio",
   "private": true,
   "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build --base=/s-project-portfolio/",
+    "build": "vite build --base=/js-project-portfolio/",
     "preview": "vite preview"
   },
   "devDependencies": {
